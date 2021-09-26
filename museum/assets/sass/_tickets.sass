@@ -1,0 +1,126 @@
+#tickets
+    background: #030303
+    font-family: 'Roboto', sans-serif
+    color: #fff
+    padding: 75px 0
+    height: 893px
+.underline-title
+    margin-bottom: 77px
+    height: 1px
+.tickets
+    &__title
+        margin-bottom: 25px
+    &-content
+        display: flex
+        position: relative
+        &__image
+            margin-right: 60px
+        &-radio
+            &__title
+                font-weight: bold
+                font-size: 28px
+                line-height: 33px
+                margin-bottom: 54px
+            &__list
+                .radio-button
+                    margin-bottom: 50px
+                    position: relative
+                    &:last-child
+                        margin-bottom: 0
+                    label
+                        cursor: pointer
+                        margin-left: 40px
+                        font-weight: 300
+                        font-size: 22px
+                        line-height: 26px
+                        input:checked ~ .checkmark::after // выбрать псевдоэлементы after элемента с классом .checkmak, которые идут после input c атрибутом checked
+                            display: block      
+                    .checkmark 
+                        position: absolute
+                        top: 50%
+                        transform: translate(0, -50%)
+                        left: 0
+                        height: 17px
+                        width: 17px
+                        border: 2px solid #fff  
+                        border-radius: 50%
+                        &::after
+                            content: ""
+                            position: absolute
+                            top: 50%
+                            left: 50%
+                            transform: translate(-50%, -50%)
+                            width: 7px
+                            height: 7px
+                            border-radius: 50%
+                            background: white
+                            display: none
+                        
+
+                #radio_1, #radio_2, #radio_3
+                    position: absolute
+                    z-index: -1
+                    opacity: 0
+                    cursor: pointer
+        &-calc
+            margin-left: auto
+            &__title
+                font-weight: bold
+                font-size: 28px
+                line-height: 33px
+                margin-bottom: 14px
+                text-align: right
+                &:nth-child(6)
+                    margin-top: 50px
+                    letter-spacing: 1px
+            &__text
+                font-weight: 300
+                font-size: 22px
+                line-height: 26px
+                margin-bottom: 14px
+        &__button
+            background: #FFFFFF
+            border-radius: 2px
+            width: 175px
+            height: 50px
+            position: absolute
+            right: 0
+            bottom: 106px
+            font-weight: 300
+            font-size: 22px
+            line-height: 26px
+            cursor: pointer
+            padding: 5px 8px 0px 0px
+            transition: 0.2s all
+            &:hover
+                background: #9D8665
+        &-counter
+            width: 150px
+            border: 3px solid #fff 
+            height: 50px
+            padding: 3px 11px
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-bottom: 35px
+            button
+                color: #fff
+                background: none
+                display: flex
+                cursor: pointer
+                font-size: 32px
+                line-height: 37px
+                font-weight: normal
+                padding-bottom: 5px
+                &:hover
+                    filter: invert(63%) sepia(99%) saturate(454%) hue-rotate(3deg) brightness(113%) contrast(102%)
+            .calc-number
+                font-weight: 300
+                font-size: 22px
+                line-height: 26px
+                background: #000
+                color: #fff
+                width: 50px
+                text-align: center
+                padding-left: 10px
+
