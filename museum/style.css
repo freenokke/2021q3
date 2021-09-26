@@ -146,11 +146,11 @@ body {
   color: #FFFFFF;
   background: #030303;
   font-family: 'Roboto', sans-serif;
-  height: 750px;
+  height: 842px;
   background-image: url("./assets/img/background.jpg");
   background-repeat: no-repeat;
-  background-size: 1215px 750px;
-  background-position: calc(50% + 353px) 100%;
+  background-size: 1000px 750px;
+  background-position: right calc(50% + (-220px)) bottom 60px;
   margin-top: -2px;
 }
 
