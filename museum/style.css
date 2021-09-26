@@ -157,7 +157,7 @@ body {
 #welcome .container {
   height: 100%;
   width: 100%;
-  padding-top: 114px;
+  padding-top: 182px;
   padding-bottom: 246px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -169,6 +169,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  position: relative;
 }
 
 .welcome-text {
@@ -201,6 +202,94 @@ body {
 
 .welcome-button:hover {
   background: #9D8665;
+}
+
+.welcome-slider_toolbar {
+  width: 600px;
+  height: 120px;
+  background-color: #030303;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 75px 40px 74px;
+}
+
+.welcome-slider_toolbar .slider-toolbar__count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 58px;
+}
+
+.welcome-slider_toolbar .slider-toolbar__count .count__symbol {
+  margin: 0 11px;
+  height: 20px;
+  width: 3px;
+  background-color: #fff;
+}
+
+.welcome-slider_toolbar .slider-toolbar__count .count__num {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 40px;
+}
+
+.welcome-slider_toolbar .slider-toolbar__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 58px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcome-slider_toolbar .slider-toolbar__list .list-marker {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  margin-right: 25px;
+}
+
+.welcome-slider_toolbar .slider-toolbar__list .list-marker:last-child {
+  margin-right: 0;
+}
+
+.welcome-slider_toolbar .slider-toolbar__handle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcome-slider_toolbar .slider-toolbar__handle .handle__previous-button {
+  width: 30px;
+  height: 8px;
+  background-image: url("./assets/img/welcome/left.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  margin-right: 20px;
+}
+
+.welcome-slider_toolbar .slider-toolbar__handle .handle__next-button {
+  width: 30px;
+  height: 8px;
+  background-image: url("./assets/img/welcome/right.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
 }
 
 #visiting {

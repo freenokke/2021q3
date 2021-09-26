@@ -11,11 +11,12 @@
     .container
         height: 100%
         width: 100%
-        padding-top: 114px
+        padding-top: 182px
         padding-bottom: 246px
         display: flex
         flex-direction: column
         align-items: flex-start
+        position: relative
 .welcome
     &-text
         margin-top: 26px
@@ -40,4 +41,60 @@
             color: #FFFFFF
         &:hover
             background: #9D8665
-            
+    &-slider_toolbar
+        width: 600px
+        height: 120px
+        background-color: #030303
+        position: absolute
+        right: 0
+        bottom: 0
+        display: flex
+        padding: 40px 75px 40px 74px
+        .slider-toolbar
+            &__count
+                display: flex
+                align-items: center
+                margin-right: 58px
+                .count
+                    &__symbol
+                        margin: 0 11px
+                        height: 20px
+                        width: 3px
+                        background-color: #fff
+                    &__num
+                        font-family: Roboto, sans-serif
+                        font-style: normal
+                        font-weight: normal
+                        font-size: 22px
+                        line-height: 40px
+            &__list
+                display: flex
+                margin-right: 58px
+                align-items: center
+                .list-marker
+                    width: 16px
+                    height: 16px
+                    background-color: #fff
+                    margin-right: 25px
+                    &:last-child
+                        margin-right: 0
+            &__handle
+                display: flex
+                background-color: black
+                align-items: center
+                .handle
+                    &__previous-button
+                        width: 30px
+                        height: 8px
+                        background-image: url('./assets/img/welcome/left.svg')
+                        background-repeat: no-repeat
+                        background-position: center center
+                        background-color: transparent
+                        margin-right: 20px
+                    &__next-button
+                        width: 30px
+                        height: 8px
+                        background-image: url('./assets/img/welcome/right.svg')
+                        background-repeat: no-repeat
+                        background-position: center center
+                        background-color: transparent
