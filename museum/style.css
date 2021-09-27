@@ -724,6 +724,7 @@ body {
           columns: 3 456px;
   -webkit-column-gap: 36px;
           column-gap: 36px;
+  max-height: 2970px;
 }
 
 #tickets {
