@@ -12,8 +12,18 @@
             &:nth-child(1), &:nth-child(11)              
                 margin-top: 50px
     .picture-container
-        height: 2200px
-        overflow-y: hidden 
+        max-height: 2200px
+        overflow-y: hidden
+        position: relative
+        &::after
+            position: absolute
+            content: ''
+            display: block
+            height: 360px
+            bottom: 0
+            left: 0
+            right: 0
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)
         &-inner
             columns: 3 456px
             column-gap: 36px

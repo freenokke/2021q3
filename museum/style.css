@@ -715,8 +715,21 @@ body {
 }
 
 #gallery .picture-container {
-  height: 2200px;
+  max-height: 2200px;
   overflow-y: hidden;
+  position: relative;
+}
+
+#gallery .picture-container::after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 360px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#000000));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
 
 #gallery .picture-container-inner {
