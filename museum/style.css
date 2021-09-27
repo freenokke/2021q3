@@ -744,7 +744,7 @@ body {
   background: #fff;
   font-family: 'Roboto', sans-serif;
   color: #000;
-  padding: 75px 0;
+  padding: 81px 0;
   height: 893px;
 }
 
@@ -934,7 +934,7 @@ body {
 #contacts {
   font-family: 'Roboto', sans-serif;
   color: #000;
-  padding: 75px 0;
+  padding: 80px 0;
 }
 
 #contacts .contacts__title {
@@ -958,7 +958,7 @@ body {
 
 #contacts .contacts-content-text {
   max-width: 282px;
-  padding-top: 11px;
+  padding-top: 5px;
 }
 
 #contacts .contacts-content-text__title {
