@@ -1,0 +1,111 @@
+#welcome 
+    color: #FFFFFF
+    background: #030303
+    font-family: 'Roboto', sans-serif
+    height: 810px
+    background-image: url('./assets/img/background.jpg')
+    background-repeat: no-repeat
+    background-size: 1000px 750px
+    background-position: right calc(50% + (-220px)) bottom 60px
+    margin-top: -2px
+    .container
+        height: 100%
+        width: 100%
+        padding-top: 151px
+        padding-bottom: 246px
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        position: relative
+.welcome
+    &-text
+        margin-top: 26px
+        margin-bottom: 76px
+        font-weight: 300
+        font-size: 28px
+        line-height: 33px
+        letter-spacing: 2px
+    &-button
+        line-height: 75px
+        background: #710707
+        border-radius: 10px
+        text-align: center
+        height: 75px
+        width: 360px
+        font-weight: 100
+        font-size: 22px
+        letter-spacing: 2px
+        color: #FFFFFF
+        transition: 0.2s all
+        &:visited
+            color: #FFFFFF
+        &:hover
+            background: #9D8665
+    &-slider_toolbar
+        width: 600px
+        height: 120px
+        background-color: #030303
+        position: absolute
+        right: 0
+        bottom: 0
+        display: flex
+        padding: 40px 75px 40px 74px
+        .slider-toolbar
+            &__count
+                display: flex
+                align-items: center
+                margin-right: 58px
+                .count
+                    &__symbol
+                        margin: 0 11px
+                        height: 20px
+                        width: 3px
+                        background-color: #fff
+                    &__num
+                        font-family: Roboto, sans-serif
+                        font-style: normal
+                        font-weight: normal
+                        font-size: 22px
+                        line-height: 40px
+            &__list
+                display: flex
+                margin-right: 58px
+                align-items: center
+                .list-marker
+                    width: 16px
+                    height: 16px
+                    background-color: #fff
+                    margin-right: 25px
+                    cursor: pointer
+                    &:last-child
+                        margin-right: 0
+                    &:hover
+                        background-color: #9D8665
+                .slide-1
+                    background-color: #D2B183
+            &__handle
+                display: flex
+                background-color: black
+                align-items: center
+                .handle
+                    &__previous-button
+                        cursor: pointer
+                        width: 30px
+                        height: 8px
+                        background-image: url('./assets/img/welcome/left.svg')
+                        background-repeat: no-repeat
+                        background-position: center center
+                        background-color: transparent
+                        margin-right: 20px
+                        &:hover
+                            filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%)
+                    &__next-button
+                        cursor: pointer
+                        width: 30px
+                        height: 8px
+                        background-image: url('./assets/img/welcome/right.svg')
+                        background-repeat: no-repeat
+                        background-position: center center
+                        background-color: transparent
+                        &:hover
+                            filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%)

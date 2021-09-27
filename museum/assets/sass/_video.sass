@@ -1,0 +1,168 @@
+#video
+    color: #000
+    font-family: 'Roboto', sans-serif
+    padding: 75px 0px 75px
+    .container
+        display: flex
+        flex-direction: column
+        align-items: center
+.video
+    &-content__toolbar
+        margin-bottom: 43px
+        height: 85px
+        background: #000000
+        display: flex
+        align-items: center
+        padding: 5px 0px 0px 29px
+        button
+            cursor: pointer
+            &:hover
+                filter: invert(71%) sepia(0%) saturate(1057%) hue-rotate(236deg) brightness(84%) contrast(101%)
+            &:nth-child(1)
+                height: 31px
+                width: 23px
+                margin-right: 50px
+                background-image: url('./assets/img/video/toolbar-icon-play.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                background-color: transparent
+            &:nth-child(3)
+                height: 31px
+                width: 38px
+                margin-right: 50px
+                margin-left: 50px
+                background-image: url('./assets/img/video/toolbar-icon-volume.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                background-color: transparent
+            &:nth-child(5)
+                width: 35px
+                height: 35px
+                margin-left: 50px
+                background-image: url('./assets/img/video/toolbar-icon-fullscreen.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                background-color: transparent                      
+    &-content__video-image
+        display: block
+        position: relative
+        height: 650px
+        img
+            height: 100%
+            width: 100%
+        // &::after 
+        //     content: ""
+        //     height: 220px
+        //     width: 220px
+        //     position: absolute
+        //     left: 50%
+        //     transform: translate(-50%, -50%)
+        //     top: 50%
+        //     background-image: url('./assets/img/video/play_icon.svg')
+        // &:hover::after
+        //         filter: invert(59%) sepia(16%) saturate(729%) hue-rotate(356deg) brightness(89%) contrast(86%)
+        .main_play_button
+            position: absolute
+            height: 220px
+            width: 220px
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            background-image: url('./assets/img/video/play_icon.svg')
+            background-color: transparent
+            cursor: pointer
+            transition: 0.2s all
+            &:hover
+                filter: invert(55%) sepia(21%) saturate(573%) hue-rotate(356deg) brightness(95%) contrast(85%) opacity(85%)
+    &-textcontent
+        display: flex
+        column-gap: 114px
+        margin-bottom: 75px
+        &__description
+            max-width: 720px
+            font-weight: 300
+            font-size: 22px
+            line-height: 38px
+            padding-top: 10px
+        &__title
+            max-width: 606px
+            color: #9D8665
+    &-content__video-playlist
+        display: flex
+        justify-content: space-between
+        margin-bottom: 40px
+        video
+            max-width: 452px  
+    &-content__playlist-pagination
+        display: flex
+        justify-content: center
+        button
+            margin-right: 20px
+            cursor: pointer
+            &:last-child
+                margin-right: 0  
+            &:nth-child(2)
+                background-color: #333333
+                            
+        .playlist-pagination
+            &__item
+                display: inline-block
+                background-color: #999999
+                height: 12px
+                width: 12px
+                border-radius: 50px
+                &:hover
+                    background-color: #710707
+            &__symbol
+                &:hover
+                    filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%)
+        .previous
+            width: 10px
+            height: 12px
+            // margin-left: 50px
+            background-image: url('./assets/img/video/playlist_prev.svg')
+            background-repeat: no-repeat
+            background-position: center center
+            background-color: transparent      
+        .next
+            width: 10px
+            height: 12px
+            // margin-left: 50px
+            background-image: url('./assets/img/video/playlist_next.svg')
+            background-repeat: no-repeat
+            background-position: center center
+            background-color: transparent   
+.progress 
+    background: linear-gradient(to right, #710707 0%, #710707 54%, #C4C4C4 40%, #C4C4C4 100%)
+    border: none
+    height: 8px
+    width: 400px
+    outline: none
+    transition: background 450ms ease-in
+    -webkit-appearance: none
+
+.progress::-webkit-slider-thumb 
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    -webkit-appearance: none
+    cursor: ew-resize
+    background: #fff
+
+.progress-volume
+    background: linear-gradient(to right, #710707 0%, #710707 42%, #C4C4C4 40%, #C4C4C4 100%)
+    border: none
+    height: 8px
+    width: 400px
+    outline: none
+    transition: background 450ms ease-in
+    -webkit-appearance: none
+
+.progress-volume::-webkit-slider-thumb 
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    -webkit-appearance: none
+    cursor: ew-resize
+    background: #fff
+
