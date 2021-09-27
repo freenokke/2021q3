@@ -715,7 +715,7 @@ body {
 }
 
 #gallery .picture-container {
-  max-height: 2200px;
+  max-height: 2126px;
   overflow-y: hidden;
   position: relative;
 }
@@ -776,7 +776,7 @@ body {
 }
 
 .tickets-content-radio__list .radio-button {
-  margin-bottom: 50px;
+  margin-bottom: 24px;
   position: relative;
 }
 
@@ -837,7 +837,7 @@ body {
   font-weight: bold;
   font-size: 28px;
   line-height: 33px;
-  margin-bottom: 14px;
+  margin-bottom: 23px;
   text-align: right;
 }
 
@@ -890,7 +890,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 }
 
 .tickets-content-counter button {
