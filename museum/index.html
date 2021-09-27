@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script src="./assets/js/video.js" defer></script>
 </head>
 <body>
     <header>
@@ -55,7 +56,7 @@
                 </aside>
                 <h1 class="welcome-title section-title">Welcome <br/> to the Louvre</h1>
                 <p class="welcome-text">From the castle to the museum</p>
-                <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcome-button">Discover the Louvre</a>
+                <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcome-button" target="_blank">Discover the Louvre</a>
             </div>
         </section>
         <section id="visiting">
@@ -124,6 +125,10 @@
         </section>
         <section id="video">
             <div class="container">
+                <div class="video-textcontent">
+                    <h2 class="video-textcontent__title section-title">Video Journey</h2>
+                    <p class="video-textcontent__description">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
+                </div>
                 <div class="video-content">
                     <div class="video-content__video-image">
                         <img src="./assets/img/video/video_poster.jpg" alt="louvre_img">
@@ -131,22 +136,32 @@
                     </div>
                     <div class="video-content__toolbar">
                         <!-- <img src="./assets/img/video/toolbar-icon-previous.svg" alt="previous_button"> -->
-                        <button type="button" class="previous_button"></button>
+                        <!-- <button type="button" class="previous_button"></button> -->
                         <!-- <img src="./assets/img/video/toolbar-icon-play.svg" alt="play_button"> -->
                         <button type="button" class="play_button"></button>
                         <!-- <img src="./assets/img/video/toolbar-icon-next.svg" alt="next_button"> -->
-                        <button type="button" class="next_button"></button>
-                        <input type="range" value="47" step="1" id="video-range" style="width: 820px">
+                        <!-- <button type="button" class="next_button"></button> -->
+                        <input type="range" value="54" step="1" id="video-range" style="width: 929px" class="progress">
                         <!-- <img src="./assets/img/video/toolbar-icon-volume.svg" alt="volume_button"> -->
                         <button type="button" class="volume_button"></button>
-                        <input type="range" value="40" step="1" id="volume-range" style="width: 155px;">
+                        <input type="range" value="42" step="1" id="volume-range" style="width: 155px;" class="progress-volume">
                         <!-- <img src="./assets/img/video/toolbar-icon-fullscreen.svg" alt="fullscreen_button"> -->
                         <button type="button" class="fullscreen_button"></button>
                     </div>
-                </div>
-                <div class="video-textcontent">
-                    <h2 class="video-textcontent__title section-title">Video Journey</h2>
-                    <p class="video-textcontent__description">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
+                    <div class="video-content__video-playlist">
+                        <iframe width="452" height="254" src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="452" height="254" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="452" height="254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-content__playlist-pagination">
+                        <button type="button" class="playlist-pagination__symbol previous"></button>
+                        <button type="button" class="playlist-pagination__item bullet"></button>
+                        <button type="button" class="playlist-pagination__item bullet"></button>
+                        <button type="button" class="playlist-pagination__item bullet"></button>
+                        <button type="button" class="playlist-pagination__item bullet"></button>
+                        <button type="button" class="playlist-pagination__item bullet"></button>
+                        <button type="button" class="playlist-pagination__symbol next"></button>
+                    </div>
                 </div>
             </div>
         </section>
