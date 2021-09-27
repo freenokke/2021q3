@@ -27,7 +27,7 @@ header {
 }
 
 .header-menu {
-  max-width: 720px;
+  max-width: 775px;
 }
 
 .header-menu__list {
@@ -59,7 +59,7 @@ header {
 }
 
 .header-menu__item {
-  margin-right: 55px;
+  margin-right: 56px;
 }
 
 .header-menu__item:last-child {
@@ -264,6 +264,14 @@ body {
   margin-right: 0;
 }
 
+.welcome-slider_toolbar .slider-toolbar__list .list-marker:hover {
+  background-color: #9D8665;
+}
+
+.welcome-slider_toolbar .slider-toolbar__list .slide-1 {
+  background-color: #D2B183;
+}
+
 .welcome-slider_toolbar .slider-toolbar__handle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -285,6 +293,11 @@ body {
   margin-right: 20px;
 }
 
+.welcome-slider_toolbar .slider-toolbar__handle .handle__previous-button:hover {
+  -webkit-filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%);
+          filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%);
+}
+
 .welcome-slider_toolbar .slider-toolbar__handle .handle__next-button {
   cursor: pointer;
   width: 30px;
@@ -293,6 +306,11 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-color: transparent;
+}
+
+.welcome-slider_toolbar .slider-toolbar__handle .handle__next-button:hover {
+  -webkit-filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%);
+          filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%);
 }
 
 #visiting {
