@@ -973,14 +973,14 @@ body {
 
 #contacts .contacts-content-text {
   max-width: 282px;
-  padding-top: 5px;
+  padding-top: 0px;
 }
 
 #contacts .contacts-content-text__title {
   font-weight: 500;
   font-size: 28px;
   line-height: 33px;
-  margin-bottom: 50px;
+  margin-bottom: 52px;
 }
 
 #contacts .contacts-content-text__contact {
@@ -988,6 +988,14 @@ body {
   font-size: 22px;
   line-height: 26px;
   margin-bottom: 25px;
+}
+
+#contacts .contacts-content-text__contact a {
+  color: #000;
+}
+
+#contacts .contacts-content-text__contact:visited {
+  color: #000;
 }
 
 #contacts .contacts-content-text__contact:last-child {
