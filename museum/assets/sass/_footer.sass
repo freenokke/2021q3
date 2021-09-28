@@ -2,10 +2,35 @@
     background: #030303
     font-family: 'Roboto', sans-serif
     color: #fff
-    padding: 75px 0
+    padding: 75px 0 50px 0
     .container
         display: flex
-        align-items: flex-start
+        flex-direction: column
+    .upper
+        display: flex
+        align-items: flex-start 
+        margin-bottom: 90px
+    .lower
+        ul
+            display: flex
+            justify-content: space-between
+            align-items: center
+            li
+                font-style: normal
+                font-weight: 200
+                font-size: 22px
+                line-height: 22px
+                letter-spacing: 2px
+    &-link
+        font-style: normal
+        font-weight: 200
+        font-size: 22px
+        line-height: 22px
+        letter-spacing: 2px
+        color: #fff
+        transition: 0.2s color
+        &:hover
+            color: #9D8665
     &-logo
         background-image: url('./assets/svg/logo.svg')
         background-repeat: no-repeat
@@ -14,7 +39,7 @@
         height: 50px
         margin-right: 145px
     &-nav_1
-        margin-right: 153px
+        margin-right: 172px
         font-weight: 100
         font-size: 22px
         line-height: 50px
@@ -41,7 +66,7 @@
         align-self: flex-end
         &__list
             display: flex
-            margin-bottom: 14px
+            margin-bottom: 18px
         &__item
             width: 48px
             height: 48px
