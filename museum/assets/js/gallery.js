@@ -24,13 +24,65 @@ mixedArr.map((item) => {
 })
 
 
-console.log('******Выполненные пункты:******')
-console.log('Вёрстка валидная +10')
-console.log('Вёрстка семантическая. В коде страницы присутствуют следующие элементы (указано минимальное количество, может быть больше) +24')
-console.log('Вёрстка соответствует макету +45')
-console.log('Требования к css +18')
-console.log('******Частично выполненные пункты******')
-console.log('Интерактивность, реализуемая через css +20')
-console.log('Интерактивность, реализуемая через js +14')
-console.log('******Невыполненные пункты******')
-console.log('Форма покупки билетов +0')
+// console.log('******Выполненные пункты:******')
+// console.log('Вёрстка валидная +10')
+// console.log('Вёрстка семантическая. В коде страницы присутствуют следующие элементы (указано минимальное количество, может быть больше) +24')
+// console.log('Вёрстка соответствует макету +45')
+// console.log('Требования к css +18')
+// console.log('******Частично выполненные пункты******')
+// console.log('Интерактивность, реализуемая через css +20')
+// console.log('Интерактивность, реализуемая через js +14')
+// console.log('******Невыполненные пункты******')
+// console.log('Форма покупки билетов +0')
+
+
+//Swiper
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+    nextEl: '.handle__next-button',
+    prevEl: '.handle__previous-button',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+    el: '.swiper-scrollbar',
+    },
+
+    spaceBetween: 2,
+});
+
+
+const swiperNextArrow = document.querySelector('.handle__next-button');
+const swiperPrevArrow = document.querySelector('.handle__previous-button');
+const swiperBullet = document.querySelectorAll('.swiper-pagination-bullet');
+const currentSlideNumber = document.querySelector('.current');
+console.log(swiperBullet)
+
+swiperNextArrow.addEventListener('click', (e) => {
+    const currentSlideIndex  = document.querySelector('.swiper-slide-active');
+    currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
+})
+
+swiperPrevArrow.addEventListener('click', (e) => {
+    const currentSlideIndex  = document.querySelector('.swiper-slide-active');
+    currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
+})
+
+
+swiperBullet.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        const currentSlideIndex  = document.querySelector('.swiper-slide-active');
+        currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
+    })
+})
