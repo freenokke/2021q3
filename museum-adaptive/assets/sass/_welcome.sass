@@ -3,16 +3,26 @@
     background: #030303
     font-family: 'Roboto', sans-serif
     height: 810px
-    background-image: url('./assets/img/background.jpg')
-    background-repeat: no-repeat
-    background-size: 1000px 750px
-    background-position: right calc(50% + (-220px)) bottom 60px
     margin-top: -2px
+    @media screen and (max-width: 1350px) 
+        height: 710px
+    @media screen and (max-width: 1200px) 
+        height: 610px   
+    @media screen and (max-width: 1025px) 
+        height: 585px
+    @media screen and (max-width: 769px)
+        height: 861px
+    
     .container
         height: 100%
         width: 100%
         padding-bottom: 246px
         position: relative
+        @media screen and (max-width: 769px)
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: flex-start
         &__left
             display: flex
             flex-direction: column
@@ -20,11 +30,29 @@
             z-index: 99
             position: absolute
             top: 151px
-            left: 0
+            left: 20px
+            @media screen and (max-width: 1200px) 
+                top: 80px
+            @media screen and (max-width: 1025px) 
+                top: 50px
+            @media screen and (max-width: 769px) 
+                position: initial
+                text-align: center
         &__right
             position: relative
-            right: calc(1000px - 1440px)
+            // right: calc(1000px - 1440px)
+            padding-left: 440px
             z-index: 0
+            // min-width: 700px
+            @media screen and (max-width: 1200px) 
+                padding-left: 385px
+            @media screen and (max-width: 1025px) 
+                padding-left: 284px
+            @media screen and (max-width: 1000px)
+                padding-left: calc(100vw - 700px)
+            @media screen and (max-width: 769px)
+                padding-left: 0
+                width: 100%
 .welcome
     &-text
         margin-top: 26px
@@ -33,6 +61,14 @@
         font-size: 28px
         line-height: 33px
         letter-spacing: 2px
+        @media screen and (max-width: 1025px) 
+            margin-bottom: 47px
+            font-size: 24px
+    &-title
+        font-size: clamp(50px, calc(50px + calc(100vw - 1024px) / 30), 80px)
+        @media screen and (max-width: 769px)
+            font-size: 40px
+            line-height: 60px
     &-button
         line-height: 75px
         background: #710707
@@ -49,10 +85,22 @@
             color: #FFFFFF
         &:hover
             background: #9D8665
+        @media screen and (max-width: 1025px) 
+            height: 59px
+            font-size: 20px
+            width: 300px
+            line-height: 62px
+        @media screen and (max-width: 769px)
+            display: none
     &-slider__container
         position: relative
-        width: 1000px
-        height: 750px
+        max-width: 1000px
+        height: auto
+        width: 100%
+        @media screen and (max-width: 1200px) 
+            max-width: 700px
+        @media screen and (max-width: 769px) 
+            max-width: 100%
     &-slider_toolbar
         width: 600px
         height: 120px
@@ -63,11 +111,18 @@
         display: flex
         padding: 40px 75px 40px 74px
         z-index: 1
+        @media screen and (max-width: 1025px)
+            width: 721px
+        @media screen and (max-width: 769px)
+            width: 100%
         .slider-toolbar
             &__count
                 display: flex
                 align-items: center
                 margin-right: 58px
+                @media screen and (max-width: 1025px) 
+                    margin-left: 148px
+                    margin-right: 49px
                 .count
                     &__symbol
                         margin: 0 11px
@@ -80,10 +135,14 @@
                         font-weight: normal
                         font-size: 22px
                         line-height: 40px
+                        @media screen and (max-width: 1025px) 
+                            font-size: 20px
             &__list
                 display: flex
                 margin-right: 58px
                 align-items: center
+                @media screen and (max-width: 1025px) 
+                    margin-right: 46px
                 .list-marker
                     width: 16px
                     height: 16px

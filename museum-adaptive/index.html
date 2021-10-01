@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1920px">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Museum</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,12 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <div data-index='1' class="swiper-slide"><img src="./assets/img/welcome/slider/1.jpg" alt=""></div>
+                                <div data-index='1' class="swiper-slide">
+                                    <picture>
+                                        <!-- <source media="(max-width: 769px)" srcset="./assets/img/welcome/slider/1_768px.jpg"> -->
+                                        <img src="./assets/img/welcome/slider/1.jpg" alt="">
+                                    </picture>    
+                                </div>
                                 <div data-index='2' class="swiper-slide"><img src="./assets/img/welcome/slider/2.jpg" alt=""></div>
                                 <div data-index='3' class="swiper-slide"><img src="./assets/img/welcome/slider/3.jpg" alt=""></div>
                                 <div data-index='4' class="swiper-slide"><img src="./assets/img/welcome/slider/4.jpg" alt=""></div>
@@ -60,12 +65,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                
+                </div>               
                 <aside class="welcome-slider_toolbar">
-
-
-
                     <div class="slider-toolbar__count">
                         <span class="count__num current">01</span>                      
                         <span class="count__symbol"></span>

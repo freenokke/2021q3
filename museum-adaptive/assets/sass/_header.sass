@@ -9,6 +9,10 @@ header
         display: flex
         align-items: center
         justify-content: space-between
+        @media screen and (max-width: 1025px)
+            padding: 51px 0px 48px 0px
+
+        
     &-logo
         background-image: url('./assets/svg/logo.svg')
         background-repeat: no-repeat
@@ -17,6 +21,8 @@ header
         height: 33px
     &-menu
         max-width: 775px
+        @media screen and (max-width: 1025px)
+            display: none
     &-menu__list
         display: flex
         // padding-left: 5px
