@@ -171,8 +171,11 @@ body {
 #welcome .container {
   height: 100%;
   width: 100%;
-  padding-top: 151px;
   padding-bottom: 246px;
+  position: relative;
+}
+
+#welcome .container__left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,7 +186,16 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  z-index: 99;
+  position: absolute;
+  top: 151px;
+  left: 0;
+}
+
+#welcome .container__right {
   position: relative;
+  right: calc(1000px - 1440px);
+  z-index: 0;
 }
 
 .welcome-text {
@@ -218,6 +230,12 @@ body {
   background: #9D8665;
 }
 
+.welcome-slider__container {
+  position: relative;
+  width: 1000px;
+  height: 750px;
+}
+
 .welcome-slider_toolbar {
   width: 600px;
   height: 120px;
@@ -229,6 +247,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   padding: 40px 75px 40px 74px;
+  z-index: 1;
 }
 
 .welcome-slider_toolbar .slider-toolbar__count {
@@ -325,6 +344,48 @@ body {
 .welcome-slider_toolbar .slider-toolbar__handle .handle__next-button:hover {
   -webkit-filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%);
           filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-pagination {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  border-radius: 0;
+  background: #FFFFFF;
+  opacity: 100;
+  color: #fff;
+  margin-right: 25px !important;
+}
+
+.swiper-pagination-bullet:last-child {
+  margin-right: 0  !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #D2B183;
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: #9D8665;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0;
 }
 
 #visiting {

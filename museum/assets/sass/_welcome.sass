@@ -11,12 +11,20 @@
     .container
         height: 100%
         width: 100%
-        padding-top: 151px
         padding-bottom: 246px
-        display: flex
-        flex-direction: column
-        align-items: flex-start
         position: relative
+        &__left
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            z-index: 99
+            position: absolute
+            top: 151px
+            left: 0
+        &__right
+            position: relative
+            right: calc(1000px - 1440px)
+            z-index: 0
 .welcome
     &-text
         margin-top: 26px
@@ -41,6 +49,10 @@
             color: #FFFFFF
         &:hover
             background: #9D8665
+    &-slider__container
+        position: relative
+        width: 1000px
+        height: 750px
     &-slider_toolbar
         width: 600px
         height: 120px
@@ -50,6 +62,7 @@
         bottom: 0
         display: flex
         padding: 40px 75px 40px 74px
+        z-index: 1
         .slider-toolbar
             &__count
                 display: flex

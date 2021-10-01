@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" /> 
     <script src="./assets/js/video.js" defer></script>
@@ -37,18 +41,43 @@
     <main>
         <section id="welcome">
             <div class="container">
+                <div class="container__left">
+                    <h1 class="welcome-title section-title">Welcome <br/> to the Louvre</h1>
+                    <p class="welcome-text">From the castle to the museum</p>
+                    <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcome-button" target="_blank">Discover the Louvre</a>
+                </div>
+                <div class="container__right">
+                    <div class="welcome-slider__container">
+                        <div class="swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div data-index='1' class="swiper-slide"><img src="./assets/img/welcome/slider/1.jpg" alt=""></div>
+                                <div data-index='2' class="swiper-slide"><img src="./assets/img/welcome/slider/2.jpg" alt=""></div>
+                                <div data-index='3' class="swiper-slide"><img src="./assets/img/welcome/slider/3.jpg" alt=""></div>
+                                <div data-index='4' class="swiper-slide"><img src="./assets/img/welcome/slider/4.jpg" alt=""></div>
+                                <div data-index='5' class="swiper-slide"><img src="./assets/img/welcome/slider/5.jpg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <aside class="welcome-slider_toolbar">
+
+
+
                     <div class="slider-toolbar__count">
                         <span class="count__num current">01</span>                      
                         <span class="count__symbol"></span>
                         <span class="count__num total">05</span>
                     </div>
                     <div class="slider-toolbar__list">
-                        <button type="button" class="list-marker slide-1"></button>
+                        <div class="swiper-pagination"></div>
+                        <!-- <button type="button" class="list-marker slide-1"></button>
                         <button type="button" class="list-marker slide-2"></button>
                         <button type="button" class="list-marker slide-3"></button>
                         <button type="button" class="list-marker slide-4"></button>
-                        <button type="button" class="list-marker slide-5"></button>
+                        <button type="button" class="list-marker slide-5"></button> -->
                         
                     </div>
                     <div class="slider-toolbar__handle">
@@ -56,9 +85,6 @@
                         <button type="button" class="handle__next-button"></button>
                     </div>
                 </aside>
-                <h1 class="welcome-title section-title">Welcome <br/> to the Louvre</h1>
-                <p class="welcome-text">From the castle to the museum</p>
-                <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcome-button" target="_blank">Discover the Louvre</a>
             </div>
         </section>
         <section id="visiting">
@@ -302,6 +328,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="./assets/js/gallery.js" defer></script>
 </body>
 </html>
