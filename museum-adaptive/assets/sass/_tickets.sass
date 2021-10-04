@@ -28,9 +28,15 @@
             font-size: 40px
             line-height: 60px
             margin-bottom: 21px
+        @media screen and (max-width: 421px) 
+            font-size: 28px
+            line-height: 40px
     &-content
         display: flex
         position: relative
+        @media screen and (max-width: 550px)
+            flex-direction: column
+            align-items: center
         &__image
             margin-right: 60px
             @media screen and (max-width: 1440px) 
@@ -48,6 +54,12 @@
             @media screen and (max-width: 760px)
                 height: auto
                 object-fit: cover
+            @media screen and (max-width: 550px)
+                max-width: 100%
+                margin-right: 0
+            @media screen and (max-width: 421px)
+                height: 160px
+                width: 100%
             img 
                 width: 100%
                 height: 100%
@@ -111,6 +123,8 @@
             @media screen and (max-width: 1025px)
                 max-width: 175px
                 margin-left: 0
+            @media screen and (max-width: 421px)
+                margin-top: 40px
             &__title
                 font-weight: bold
                 font-size: 28px
@@ -123,12 +137,19 @@
                     @media screen and (max-width: 1025px)
                         margin-bottom: 0px
                         margin-top: 0px
+                    @media screen and (max-width: 421px)
+                        margin-top: 40px
                 @media screen and (max-width: 1440px) 
                     text-align: left
                 @media screen and (max-width: 1025px)
                     margin-bottom: 29px
                 @media screen and (max-width: 769px)
                     margin-bottom: 38px
+                @media screen and (max-width: 421px)
+                    font-size: 16px
+                    line-height: 19px
+                    text-align: center
+                    margin-bottom: 20px
             &__text
                 font-weight: 300
                 font-size: 22px
@@ -136,6 +157,13 @@
                 margin-bottom: 14px
                 @media screen and (max-width: 769px)
                     margin-bottom: 9px
+                @media screen and (max-width: 769px)
+                    font-size: 22px
+                    line-height: 26px
+                @media screen and (max-width: 421px)
+                    margin-bottom: 13px
+                    font-size: 16px
+                    line-height: 19px
         &__button
             background: #000
             color: #fff
@@ -166,6 +194,9 @@
             @media screen and (max-width: 769px) 
                 bottom: -91px
                 right: 49px
+            @media screen and (max-width: 550px) 
+                right: 50%
+                transform: translate(50%,0)
         &-counter
             width: 150px
             border: 3px solid #000 
@@ -180,6 +211,8 @@
                 margin-bottom: 26px
             @media screen and (max-width: 769px) 
                 margin-bottom: 32px
+            @media screen and (max-width: 421px) 
+                margin-bottom: 24px
             button
                 color: #000
                 background: none

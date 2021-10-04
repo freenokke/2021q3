@@ -7,7 +7,7 @@
         padding-top: 58px
     @media screen and (max-width: 769px) 
         padding-top: 40px
-    .underline-title
+    .underline
         &::after
             top: 260px
     .container
@@ -24,6 +24,8 @@
         @media screen and (max-width: 769px) 
             justify-content: normal
             margin-bottom: 80px
+        @media screen and (max-width: 690px) 
+            justify-content: space-between
             
     .lower
         ul
@@ -36,6 +38,13 @@
                 font-size: 22px
                 line-height: 22px
                 letter-spacing: 2px
+                @media screen and (max-width: 421px) 
+                    font-size: 16px
+                    line-height: 22px
+                a
+                    @media screen and (max-width: 421px) 
+                        font-size: 16px
+                        line-height: 22px
     &-link
         font-style: normal
         font-weight: 200
@@ -46,6 +55,9 @@
         transition: 0.2s color
         &:hover
             color: #9D8665
+        &.shcool
+            @media screen and (max-width: 550px) 
+                display: none
     &-logo
         background-image: url('./assets/svg/logo.svg')
         background-repeat: no-repeat
@@ -62,6 +74,11 @@
         @media screen and (max-width: 769px) 
             height: 41px
             margin-left: 1px
+        @media screen and (max-width: 769px) 
+            background-image: url('./assets/svg/logo_420px.svg')
+        @media screen and (max-width: 421px) 
+            flex-basis: 100%
+            justify-self: flex-start
     &-nav_1
         margin-right: 172px
         font-weight: 100
@@ -76,6 +93,12 @@
             margin-right: 185px
             line-height: 45px
             letter-spacing: 0px
+        @media screen and (max-width: 690px) 
+            margin-left: 0
+            margin-right: 0
+        @media screen and (max-width: 421px) 
+            font-size: 16px
+            line-height: 30px
         a
             color: #fff
             transition: 0.2s color
@@ -93,6 +116,9 @@
         @media screen and (max-width: 769px) 
             line-height: 45px
             letter-spacing: 0px
+        @media screen and (max-width: 421px) 
+            font-size: 16px
+            line-height: 30px
         a 
             color: #fff
             transition: 0.2s color
@@ -103,6 +129,10 @@
         @media screen and (max-width: 769px) 
             margin-left: 299px
             margin-top: 38px
+        @media screen and (max-width: 690px)
+            margin-left: 50%
+            transform: translate(-50%,0)
+
         &__list
             display: flex
             margin-bottom: 18px
@@ -118,6 +148,8 @@
             filter: drop-shadow(0px 0px 0px #666666)
             border-radius: 50px
             margin-right: 24px
+            @media screen and (max-width: 421px)
+                margin-right: 5px 
             &:last-child
                 margin-right: 0
             .social-link

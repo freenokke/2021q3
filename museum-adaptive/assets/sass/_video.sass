@@ -54,6 +54,9 @@
                 @media screen and (max-width: 760px)  
                     margin: 0
                     flex-shrink: 0
+                @media screen and (max-width: 500px)  
+                    width: 13px
+                    height: 17.5px
             &:nth-child(3)
                 height: 31px
                 width: 38px
@@ -81,6 +84,9 @@
                 @media screen and (max-width: 760px)  
                     margin: 0
                     flex-shrink: 0
+                @media screen and (max-width: 500px)  
+                    width: 18px
+                    height: 14px
             &:nth-child(5)
                 width: 35px
                 height: 35px
@@ -104,6 +110,9 @@
                 @media screen and (max-width: 760px)  
                     margin: 0
                     flex-shrink: 0
+                @media screen and (max-width: 500px)  
+                    width: 18px
+                    height: 18px
         @media screen and (max-width: 1025px)  
             height: 60px  
             margin-bottom: 47px             
@@ -115,6 +124,8 @@
             height: 53px                        
         @media screen and (max-width: 760px)
             justify-content: space-around                    
+        @media screen and (max-width: 421px)
+            margin-bottom: 45px                   
     &-content__video-image
         display: block
         position: relative
@@ -165,6 +176,10 @@
                 height: 80px
                 width: 80px
                 background-size: contain
+            @media screen and (max-width: 500px)
+                height: 50px
+                width: 50px
+                background-size: contain
     &-textcontent
         display: flex
         column-gap: 114px
@@ -192,6 +207,9 @@
             @media screen and (max-width: 769px)  
                 font-size: 40px
                 line-height: 60px
+            @media screen and (max-width: 421px) 
+                font-size: 28px
+                line-height: 40px
                 
             
     &-content__video-playlist
@@ -212,8 +230,33 @@
                     display: none
                 max-width: 354px
                 max-height: 199px 
+            @media screen and (max-width: 750px)
+                &:nth-child(3)
+                    display: block 
+                max-width: 190px
+                max-height: 101px 
+            @media screen and (max-width: 615px)
+                &:nth-child(3)
+                    display: none
+                max-width: 250px
+                max-height: 101px 
+            @media screen and (max-width: 615px)
+                &:nth-child(3)
+                    display: none
+                max-width: 250px
+                max-height: 101px 
+            @media screen and (max-width: 540px)
+                max-width: 180px
+                max-height: 101px 
+            @media screen and (max-width: 400px)
+                &:nth-child(2)
+                    display: none
+                max-width: 100%
+                max-height: 180px 
         @media screen and (max-width: 769px) 
             margin-bottom: 18px        
+        @media screen and (max-width: 421px) 
+            margin-bottom: 40px        
     &-content__playlist-pagination
         display: flex
         justify-content: center
@@ -226,8 +269,12 @@
                 background-color: #333333
             @media screen and (max-width: 769px) 
                 margin-right: 18px  
+            @media screen and (max-width: 421px) 
+                margin-right: 20px  
         @media screen and (max-width: 769px)
             margin-bottom: 40px                 
+        @media screen and (max-width: 421px)
+            margin-bottom: 0            
         .playlist-pagination
             &__item
                 display: inline-block
@@ -237,6 +284,9 @@
                 border-radius: 50px
                 &:hover
                     background-color: #710707
+                @media screen and (max-width: 421px)
+                    width: 8px
+                    height: 8px
             &__symbol
                 &:hover
                     filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%)
@@ -247,7 +297,10 @@
             background-image: url('./assets/img/video/playlist_prev.svg')
             background-repeat: no-repeat
             background-position: center center
-            background-color: transparent      
+            background-color: transparent 
+            @media screen and (max-width: 421px)
+                width: 7px
+                height: 8px     
         .next
             width: 10px
             height: 12px
@@ -255,7 +308,10 @@
             background-image: url('./assets/img/video/playlist_next.svg')
             background-repeat: no-repeat
             background-position: center center
-            background-color: transparent   
+            background-color: transparent  
+            @media screen and (max-width: 421px)
+                width: 7px
+                height: 8px 
 .progress 
     background: linear-gradient(to right, #710707 0%, #710707 54%, #C4C4C4 40%, #C4C4C4 100%)
     border: none
