@@ -11,6 +11,7 @@
         padding-bottom: 63px
     @media screen and (max-width: 769px) 
         padding-top: 39px
+        padding-bottom: 40px
 .video
     &-content
         @media screen and (max-width: 1440px)  
@@ -38,15 +39,21 @@
                 @media screen and (max-width: 1440px)  
                     background-size: contain
                     margin-right: 3.47%
-                    width: 1.6%
+                    width: 23px
+                    height: 30px
                     // margin-left: 2.1%
                 @media screen and (max-width: 1025px)
                     margin-left: 40px 
                     margin-right: 30px
-                @media screen and (max-width: 768px)  
+                @media screen and (max-width: 990px)
+                    margin: 0
                     order: 1
+                @media screen and (max-width: 769px)  
                     margin-left: 30px 
                     margin-right: 0
+                @media screen and (max-width: 760px)  
+                    margin: 0
+                    flex-shrink: 0
             &:nth-child(3)
                 height: 31px
                 width: 38px
@@ -60,14 +67,20 @@
                     background-size: contain 
                     margin-right: 3.47%
                     margin-left: 3.47%
-                    width: 2.64%
+                    width: 26px
+                    height: 20px
                 @media screen and (max-width: 1025px)  
                     margin-right: 31px
                     margin-left: 31px
-                @media screen and (max-width: 768px)  
+                @media screen and (max-width: 990px)  
                     order: 2
+                    margin: 0
+                @media screen and (max-width: 769px)  
                     margin-right: 35px
                     margin-left: 35px
+                @media screen and (max-width: 760px)  
+                    margin: 0
+                    flex-shrink: 0
             &:nth-child(5)
                 width: 35px
                 height: 35px
@@ -78,18 +91,30 @@
                 background-color: transparent
                 @media screen and (max-width: 1440px)  
                     background-size: contain 
-                    width: 2.43%
+                    width: 27px
+                    height: 27px
                     margin-left: 3.47% 
                 @media screen and (max-width: 1025px)  
                     margin-left: 28px
-                @media screen and (max-width: 768px)  
+                @media screen and (max-width: 990px)  
                     order: 4
-                    margin-left: 35px
+                    margin: 0
+                @media screen and (max-width: 769px)  
+                    margin-left: 40px
+                @media screen and (max-width: 760px)  
+                    margin: 0
+                    flex-shrink: 0
         @media screen and (max-width: 1025px)  
             height: 60px  
             margin-bottom: 47px             
-        @media screen and (max-width: 769px)  
-            margin-bottom: 26px             
+        @media screen and (max-width: 990px)  
+            justify-content: space-around
+        @media screen and (max-width: 769px)
+            justify-content: normal 
+            margin-bottom: 26px 
+            height: 53px                        
+        @media screen and (max-width: 760px)
+            justify-content: space-around                    
     &-content__video-image
         display: block
         position: relative
@@ -100,6 +125,10 @@
         @media screen and (max-width: 1025px)  
             height: 444px
         @media screen and (max-width: 1000px)  
+            height: auto
+        @media screen and (max-width: 769px)  
+            height: 329px
+        @media screen and (max-width: 750px)  
             height: auto
         img
             height: 100%
@@ -132,7 +161,7 @@
                 height: 152px
                 width: 152px
                 background-size: contain
-            @media screen and (max-width: 769px)
+            @media screen and (max-width: 990px)
                 height: 80px
                 width: 80px
                 background-size: contain
@@ -178,13 +207,13 @@
             @media screen and (max-width: 1100px) 
                 max-width: 300px
                 max-height: 163px  
-            @media screen and (max-width: 769px) 
+            @media screen and (max-width: 990px) 
                 &:nth-child(3)
                     display: none
                 max-width: 354px
                 max-height: 199px 
         @media screen and (max-width: 769px) 
-            margin-bottom: 22px        
+            margin-bottom: 18px        
     &-content__playlist-pagination
         display: flex
         justify-content: center
@@ -196,7 +225,9 @@
             &:nth-child(2)
                 background-color: #333333
             @media screen and (max-width: 769px) 
-                margin-right: 18px                    
+                margin-right: 18px  
+        @media screen and (max-width: 769px)
+            margin-bottom: 40px                 
         .playlist-pagination
             &__item
                 display: inline-block
@@ -235,11 +266,17 @@
     width: 929px
     @media screen and (max-width: 1440px)   
         max-width: 64.51%
+        height: 6px
     @media screen and (max-width: 1025px)   
         max-width: 571px
-    @media screen and (max-width: 768px)  
+    @media screen and (max-width: 990px)  
         order: 3
-        max-width: 486px
+        max-width: 485px
+        height: 5px
+    @media screen and (max-width: 670px)  
+        max-width: 300px
+    @media screen and (max-width: 421px)  
+        max-width: 200px
 
 .progress::-webkit-slider-thumb 
     width: 15px
@@ -259,9 +296,10 @@
     -webkit-appearance: none
     @media screen and (max-width: 1440px)  
         width: 10.76%
+        height: 6px
     @media screen and (max-width: 1025px)   
         width: 143px
-    @media screen and (max-width: 769px)  
+    @media screen and (max-width: 990px)  
         display: none
 
 .progress-volume::-webkit-slider-thumb 

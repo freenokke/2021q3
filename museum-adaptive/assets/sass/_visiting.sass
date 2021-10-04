@@ -10,12 +10,15 @@
         @media screen and (max-width: 1025px)
             padding: 62px 0
         @media screen and (max-width: 769px)
-            padding: 40px 0
+            padding-top: 36px
+            padding-bottom: 80px
     @media screen and (max-width: 1450px)
         height: max-content
         .underline-title.main
             @media screen and (max-width: 1025px)
                 margin-bottom: 63px
+            @media screen and (max-width: 769px)
+                margin-bottom: 41px
 .visiting
     &-title
         color: #9D8665
@@ -27,6 +30,7 @@
         @media screen and (max-width: 769px)  
             font-size: 40px
             line-height: 60px
+            margin-bottom: 23px
     &-cardslist
         display: flex
         flex-wrap: wrap
@@ -38,6 +42,9 @@
             justify-content: center
             column-gap: 108px
             row-gap: 62px
+        @media screen and (max-width: 769px)
+            column-gap: 59px
+            row-gap: 41px
     &-card
         display: block
         max-width: 440px
@@ -68,6 +75,10 @@
                 font-size: 28px
                 line-height: 31px
                 letter-spacing: 3px
+            @media screen and (max-width: 1025px)
+                font-size: 22px
+                line-height: 24px
+                letter-spacing: 3px
         &__text
             color: #000
             font-weight: 100
@@ -78,6 +89,9 @@
                 font-size: 20px
                 line-height: 23px
                 margin-bottom: 12px
+            @media screen and (max-width: 769px)
+                font-size: 18px
+                line-height: 21px
         &__description
             font-weight: 100
             font-size: 18px
