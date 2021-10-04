@@ -4,7 +4,12 @@
     color: #fff
     padding: 75px 0 50px 0
     @media screen and (max-width: 1025px) 
-        padding-top: 60px
+        padding-top: 58px
+    @media screen and (max-width: 769px) 
+        padding-top: 40px
+    .underline-title
+        &::after
+            top: 260px
     .container
         display: flex
         flex-direction: column
@@ -16,6 +21,10 @@
             justify-content: space-between
         @media screen and (max-width: 850px) 
             flex-wrap: wrap
+        @media screen and (max-width: 769px) 
+            justify-content: normal
+            margin-bottom: 80px
+            
     .lower
         ul
             display: flex
@@ -50,6 +59,9 @@
             margin-right: -67px
         @media screen and (max-width: 1000px) 
             margin-right: 0
+        @media screen and (max-width: 769px) 
+            height: 41px
+            margin-left: 1px
     &-nav_1
         margin-right: 172px
         font-weight: 100
@@ -59,6 +71,11 @@
         padding-top: 3px
         @media screen and (max-width: 1440px) 
             margin-right: 10px
+        @media screen and (max-width: 769px) 
+            margin-left: 100px
+            margin-right: 185px
+            line-height: 45px
+            letter-spacing: 0px
         a
             color: #fff
             transition: 0.2s color
@@ -73,6 +90,9 @@
         padding-top: 3px
         @media screen and (max-width: 1440px) 
             margin-right: 0
+        @media screen and (max-width: 769px) 
+            line-height: 45px
+            letter-spacing: 0px
         a 
             color: #fff
             transition: 0.2s color
@@ -81,12 +101,15 @@
     &-social_links
         align-self: flex-end
         @media screen and (max-width: 769px) 
-            margin-left: auto
+            margin-left: 299px
+            margin-top: 38px
         &__list
             display: flex
             margin-bottom: 18px
             @media screen and (max-width: 1025px) 
                 margin-bottom: 10px
+            @media screen and (max-width: 769px) 
+                margin: 0
         &__item
             width: 48px
             height: 48px

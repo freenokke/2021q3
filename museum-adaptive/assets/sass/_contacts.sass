@@ -4,6 +4,8 @@
     padding: 76px 0
     @media screen and (max-width: 1025px)
         padding: 60px 0 
+    @media screen and (max-width: 769px)
+        padding: 40px 0 67px
     // height: 893px
     .contacts__title
         color: #9D8665
@@ -12,14 +14,21 @@
             font-size: 50px
             line-height: 75px
             margin-bottom: 21px
+        @media screen and (max-width: 769px)  
+            font-size: 40px
+            line-height: 60px
     .underline-title
             height: 1px
             margin-bottom: 75px
             @media screen and (max-width: 1025px)
                 margin-bottom: 63px
+            @media screen and (max-width: 769px)
+                margin-bottom: 40px
     .contacts-content
         display: flex
         justify-content: space-between
+        @media screen and (max-width: 769px)
+            flex-wrap: wrap
         &-text
             max-width: 282px
             padding-top: 0px
@@ -36,6 +45,10 @@
                     font-size: 24px
                     line-height: 28px
                     margin-bottom: 36px
+                @media screen and (max-width: 769px)  
+                    font-size: 20px
+                    line-height: 23px
+                    margin-bottom: 43px
             &__contact
                 font-weight: 300
                 font-size: 22px
@@ -44,6 +57,10 @@
                 @media screen and (max-width: 1025px)
                     font-size: 20px
                     line-height: 23px
+                    margin-bottom: 16px
+                @media screen and (max-width: 1025px)
+                    font-size: 18px
+                    line-height: 21px
                     margin-bottom: 16px
                 a
                     color: #000
@@ -54,6 +71,11 @@
         &-map
             @media screen and (max-width: 1440px)  
                 flex-shrink: 1
+            @media screen and (max-width: 769px)  
+                margin-top: 40px
+                height: 476px
+            @media screen and (max-width: 760px)  
+                height: auto
             img
                 @media screen and (max-width: 1440px)
                     width: 100%

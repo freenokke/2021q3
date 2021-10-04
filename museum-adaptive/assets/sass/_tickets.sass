@@ -8,17 +8,25 @@
         height: auto
     @media screen and (max-width: 1025px)  
         padding: 60px 0
+    @media screen and (max-width: 1000px)  
+        padding: 40px 0 130px
 .underline-title
     margin-bottom: 77px
     height: 1px
     @media screen and (max-width: 1025px) 
         margin-bottom: 60px
+    @media screen and (max-width: 769px) 
+        margin-bottom: 41px
 .tickets
     &__title
         margin-bottom: 25px
         @media screen and (max-width: 1025px)  
             font-size: 50px
             line-height: 75px
+            margin-bottom: 21px
+        @media screen and (max-width: 769px)  
+            font-size: 40px
+            line-height: 60px
             margin-bottom: 21px
     &-content
         display: flex
@@ -30,8 +38,21 @@
             @media screen and (max-width: 1025px)
                 min-width: 700px
                 margin-right: 80px
+            @media screen and (max-width: 1000px)
+                max-width: 100%
+                min-width: 0px
+            @media screen and (max-width: 769px)
+                max-width: 444px
+                height: 340px
+                margin-right: 60px
+            @media screen and (max-width: 760px)
+                height: auto
+                object-fit: cover
             img 
                 width: 100%
+                height: 100%
+                @media screen and (max-width: 760px)
+                    object-fit: cover
         &-radio
             @media screen and (max-width: 1440px) 
                 flex-basis: 30%
@@ -106,11 +127,15 @@
                     text-align: left
                 @media screen and (max-width: 1025px)
                     margin-bottom: 29px
+                @media screen and (max-width: 769px)
+                    margin-bottom: 38px
             &__text
                 font-weight: 300
                 font-size: 22px
                 line-height: 26px
                 margin-bottom: 14px
+                @media screen and (max-width: 769px)
+                    margin-bottom: 9px
         &__button
             background: #000
             color: #fff
@@ -135,6 +160,12 @@
             @media screen and (max-width: 1025px) 
                 bottom: 0
                 right: 25px
+            @media screen and (max-width: 1000px) 
+                bottom: -60px
+                right: 25px
+            @media screen and (max-width: 769px) 
+                bottom: -91px
+                right: 49px
         &-counter
             width: 150px
             border: 3px solid #000 
@@ -147,6 +178,8 @@
             @media screen and (max-width: 1025px) 
                 width: 175px
                 margin-bottom: 26px
+            @media screen and (max-width: 769px) 
+                margin-bottom: 32px
             button
                 color: #000
                 background: none
