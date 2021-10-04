@@ -8,8 +8,10 @@
         align-items: center
     @media screen and (max-width: 1025px) 
         padding-top: 60px
+        padding-bottom: 63px
     @media screen and (max-width: 769px) 
         padding-top: 39px
+        padding-bottom: 40px
 .video
     &-content
         @media screen and (max-width: 1440px)  
@@ -37,14 +39,24 @@
                 @media screen and (max-width: 1440px)  
                     background-size: contain
                     margin-right: 3.47%
-                    width: 1.6%
+                    width: 23px
+                    height: 30px
                     // margin-left: 2.1%
                 @media screen and (max-width: 1025px)
                     margin-left: 40px 
-                @media screen and (max-width: 768px)  
+                    margin-right: 30px
+                @media screen and (max-width: 990px)
+                    margin: 0
                     order: 1
+                @media screen and (max-width: 769px)  
                     margin-left: 30px 
                     margin-right: 0
+                @media screen and (max-width: 760px)  
+                    margin: 0
+                    flex-shrink: 0
+                @media screen and (max-width: 500px)  
+                    width: 13px
+                    height: 17.5px
             &:nth-child(3)
                 height: 31px
                 width: 38px
@@ -58,11 +70,23 @@
                     background-size: contain 
                     margin-right: 3.47%
                     margin-left: 3.47%
-                    width: 2.64%
-                @media screen and (max-width: 768px)  
+                    width: 26px
+                    height: 20px
+                @media screen and (max-width: 1025px)  
+                    margin-right: 31px
+                    margin-left: 31px
+                @media screen and (max-width: 990px)  
                     order: 2
+                    margin: 0
+                @media screen and (max-width: 769px)  
                     margin-right: 35px
                     margin-left: 35px
+                @media screen and (max-width: 760px)  
+                    margin: 0
+                    flex-shrink: 0
+                @media screen and (max-width: 500px)  
+                    width: 18px
+                    height: 14px
             &:nth-child(5)
                 width: 35px
                 height: 35px
@@ -73,22 +97,49 @@
                 background-color: transparent
                 @media screen and (max-width: 1440px)  
                     background-size: contain 
-                    width: 2.43%
+                    width: 27px
+                    height: 27px
                     margin-left: 3.47% 
-                @media screen and (max-width: 768px)  
+                @media screen and (max-width: 1025px)  
+                    margin-left: 28px
+                @media screen and (max-width: 990px)  
                     order: 4
-                    margin-left: 35px
+                    margin: 0
+                @media screen and (max-width: 769px)  
+                    margin-left: 40px
+                @media screen and (max-width: 760px)  
+                    margin: 0
+                    flex-shrink: 0
+                @media screen and (max-width: 500px)  
+                    width: 18px
+                    height: 18px
         @media screen and (max-width: 1025px)  
             height: 60px  
-            margin-bottom: 60px             
-        @media screen and (max-width: 769px)  
-            margin-bottom: 26px             
+            margin-bottom: 47px             
+        @media screen and (max-width: 990px)  
+            justify-content: space-around
+        @media screen and (max-width: 769px)
+            justify-content: normal 
+            margin-bottom: 26px 
+            height: 53px                        
+        @media screen and (max-width: 760px)
+            justify-content: space-around                    
+        @media screen and (max-width: 421px)
+            margin-bottom: 45px                   
     &-content__video-image
         display: block
         position: relative
         height: 650px
         @media screen and (max-width: 1440px)  
             width: 100% 
+            height: auto
+        @media screen and (max-width: 1025px)  
+            height: 444px
+        @media screen and (max-width: 1000px)  
+            height: auto
+        @media screen and (max-width: 769px)  
+            height: 329px
+        @media screen and (max-width: 750px)  
             height: auto
         img
             height: 100%
@@ -121,9 +172,13 @@
                 height: 152px
                 width: 152px
                 background-size: contain
-            @media screen and (max-width: 769px)
+            @media screen and (max-width: 990px)
                 height: 80px
                 width: 80px
+                background-size: contain
+            @media screen and (max-width: 500px)
+                height: 50px
+                width: 50px
                 background-size: contain
     &-textcontent
         display: flex
@@ -152,6 +207,9 @@
             @media screen and (max-width: 769px)  
                 font-size: 40px
                 line-height: 60px
+            @media screen and (max-width: 421px) 
+                font-size: 28px
+                line-height: 40px
                 
             
     &-content__video-playlist
@@ -167,13 +225,38 @@
             @media screen and (max-width: 1100px) 
                 max-width: 300px
                 max-height: 163px  
-            @media screen and (max-width: 769px) 
+            @media screen and (max-width: 990px) 
                 &:nth-child(3)
                     display: none
                 max-width: 354px
                 max-height: 199px 
+            @media screen and (max-width: 750px)
+                &:nth-child(3)
+                    display: block 
+                max-width: 190px
+                max-height: 101px 
+            @media screen and (max-width: 615px)
+                &:nth-child(3)
+                    display: none
+                max-width: 250px
+                max-height: 101px 
+            @media screen and (max-width: 615px)
+                &:nth-child(3)
+                    display: none
+                max-width: 250px
+                max-height: 101px 
+            @media screen and (max-width: 540px)
+                max-width: 180px
+                max-height: 101px 
+            @media screen and (max-width: 400px)
+                &:nth-child(2)
+                    display: none
+                max-width: 100%
+                max-height: 180px 
         @media screen and (max-width: 769px) 
-            margin-bottom: 22px        
+            margin-bottom: 18px        
+        @media screen and (max-width: 421px) 
+            margin-bottom: 40px        
     &-content__playlist-pagination
         display: flex
         justify-content: center
@@ -185,7 +268,13 @@
             &:nth-child(2)
                 background-color: #333333
             @media screen and (max-width: 769px) 
-                margin-right: 18px                    
+                margin-right: 18px  
+            @media screen and (max-width: 421px) 
+                margin-right: 20px  
+        @media screen and (max-width: 769px)
+            margin-bottom: 40px                 
+        @media screen and (max-width: 421px)
+            margin-bottom: 0            
         .playlist-pagination
             &__item
                 display: inline-block
@@ -195,6 +284,9 @@
                 border-radius: 50px
                 &:hover
                     background-color: #710707
+                @media screen and (max-width: 421px)
+                    width: 8px
+                    height: 8px
             &__symbol
                 &:hover
                     filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%)
@@ -205,7 +297,10 @@
             background-image: url('./assets/img/video/playlist_prev.svg')
             background-repeat: no-repeat
             background-position: center center
-            background-color: transparent      
+            background-color: transparent 
+            @media screen and (max-width: 421px)
+                width: 7px
+                height: 8px     
         .next
             width: 10px
             height: 12px
@@ -213,7 +308,10 @@
             background-image: url('./assets/img/video/playlist_next.svg')
             background-repeat: no-repeat
             background-position: center center
-            background-color: transparent   
+            background-color: transparent  
+            @media screen and (max-width: 421px)
+                width: 7px
+                height: 8px 
 .progress 
     background: linear-gradient(to right, #710707 0%, #710707 54%, #C4C4C4 40%, #C4C4C4 100%)
     border: none
@@ -224,11 +322,17 @@
     width: 929px
     @media screen and (max-width: 1440px)   
         max-width: 64.51%
+        height: 6px
     @media screen and (max-width: 1025px)   
-        max-width: 564px
-    @media screen and (max-width: 768px)  
+        max-width: 571px
+    @media screen and (max-width: 990px)  
         order: 3
-        max-width: 486px
+        max-width: 485px
+        height: 5px
+    @media screen and (max-width: 670px)  
+        max-width: 300px
+    @media screen and (max-width: 421px)  
+        max-width: 200px
 
 .progress::-webkit-slider-thumb 
     width: 15px
@@ -248,9 +352,10 @@
     -webkit-appearance: none
     @media screen and (max-width: 1440px)  
         width: 10.76%
+        height: 6px
     @media screen and (max-width: 1025px)   
         width: 143px
-    @media screen and (max-width: 769px)  
+    @media screen and (max-width: 990px)  
         display: none
 
 .progress-volume::-webkit-slider-thumb 
