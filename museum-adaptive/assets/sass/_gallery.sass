@@ -3,14 +3,29 @@
     font-family: 'Roboto', sans-serif
     background-color: #030303
     padding-top: 75px
+    @media screen and (max-width: 1025px) 
+        padding-top: 60px
     .gallery
         &__title
             margin-bottom: 75px
+            @media screen and (max-width: 1025px)  
+                font-size: 50px
+                line-height: 75px
+                margin-bottom: 60px
         &__img
             display: inline-block
             margin-bottom: 24px
             &:nth-child(1), &:nth-child(11)              
                 margin-top: 50px
+            @media screen and (max-width: 1440px)
+                max-width: 100%
+            @media screen and (max-width: 1025px)
+                max-height: 380px
+                max-width: 304px
+                &:nth-child(12) 
+                    margin-top: 50px
+            @media screen and (max-width: 1000px)
+                max-width: 100%
     .picture-container
         max-height: 2126px
         overflow-y: hidden
@@ -28,6 +43,13 @@
             columns: 3 456px
             column-gap: 36px
             max-height: 2970px
-                
+            @media screen and (max-width: 1440px)
+                columns: 3 304px
+                column-gap: 28px
+            @media screen and (max-width: 1010px)
+                columns: 3 auto
+                column-gap: 28px
+        @media screen and (max-width: 1025px)
+            max-height: 1400px        
                 
                 

@@ -142,7 +142,7 @@
                 align-items: center
                 margin-right: 58px
                 @media screen and (max-width: 1025px) 
-                    margin-left: 148px
+                    margin-left: 150px
                     margin-right: 49px
                 @media screen and (max-width: 700px) 
                     margin-left: calc((100vw - 190px) / 6)
@@ -155,6 +155,8 @@
                         height: 20px
                         width: 3px
                         background-color: #fff
+                        @media screen and (max-width: 1025px) 
+                            margin: 0 10px
                     &__num
                         font-family: Roboto, sans-serif
                         font-style: normal
@@ -201,6 +203,8 @@
                         margin-right: 20px
                         &:hover
                             filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%)
+                        @media screen and (max-width: 1025px) 
+                            width: 30px
                         @media screen and (max-width: 520px)
                             margin-right: 15px
                     &__next-button
@@ -213,3 +217,5 @@
                         background-color: transparent
                         &:hover
                             filter: invert(59%) sepia(4%) saturate(2360%) hue-rotate(356deg) brightness(90%) contrast(95%)
+                        @media screen and (max-width: 1025px) 
+                            width: 30px

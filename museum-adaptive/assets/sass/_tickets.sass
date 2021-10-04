@@ -4,23 +4,44 @@
     color: #000
     padding: 75px 0
     height: 893px
+    @media screen and (max-width: 1440px)  
+        height: auto
+    @media screen and (max-width: 1025px)  
+        padding: 60px 0
 .underline-title
     margin-bottom: 77px
     height: 1px
+    @media screen and (max-width: 1025px) 
+        margin-bottom: 60px
 .tickets
     &__title
         margin-bottom: 25px
+        @media screen and (max-width: 1025px)  
+            font-size: 50px
+            line-height: 75px
+            margin-bottom: 21px
     &-content
         display: flex
         position: relative
         &__image
             margin-right: 60px
+            @media screen and (max-width: 1440px) 
+                max-width: 40%
+            @media screen and (max-width: 1025px)
+                min-width: 700px
+                margin-right: 80px
+            img 
+                width: 100%
         &-radio
+            @media screen and (max-width: 1440px) 
+                flex-basis: 30%
             &__title
                 font-weight: bold
                 font-size: 28px
                 line-height: 33px
                 margin-bottom: 54px
+            @media screen and (max-width: 1025px)
+                    display: none
             &__list
                 .radio-button
                     margin-bottom: 24px
@@ -64,6 +85,11 @@
                     cursor: pointer
         &-calc
             margin-left: auto
+            @media screen and (max-width: 1440px) 
+                flex-basis: 30%
+            @media screen and (max-width: 1025px)
+                max-width: 175px
+                margin-left: 0
             &__title
                 font-weight: bold
                 font-size: 28px
@@ -73,6 +99,13 @@
                 &:nth-child(6)
                     margin-top: 50px
                     letter-spacing: 1px
+                    @media screen and (max-width: 1025px)
+                        margin-bottom: 0px
+                        margin-top: 0px
+                @media screen and (max-width: 1440px) 
+                    text-align: left
+                @media screen and (max-width: 1025px)
+                    margin-bottom: 29px
             &__text
                 font-weight: 300
                 font-size: 22px
@@ -96,6 +129,12 @@
             &:hover
                 background: #9D8665
                 color: #000
+            @media screen and (max-width: 1440px) 
+                bottom: -50px
+                right: 14.5%
+            @media screen and (max-width: 1025px) 
+                bottom: 0
+                right: 25px
         &-counter
             width: 150px
             border: 3px solid #000 
@@ -105,6 +144,9 @@
             justify-content: space-between
             align-items: center
             margin-bottom: 15px
+            @media screen and (max-width: 1025px) 
+                width: 175px
+                margin-bottom: 26px
             button
                 color: #000
                 background: none

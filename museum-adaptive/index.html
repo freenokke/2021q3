@@ -91,7 +91,7 @@
         <section id="visiting">
             <div class="container">
                 <h2 class="section-title visiting-title">Virtual Tour</h2>
-                <div class="underline-title"></div>
+                <div class="underline-title main"></div>
                 <div class="visiting-cardslist">
                     <a href="https://www.google.com/maps/@48.8606882,2.3356791,3a,90y,328.36h,87.55t/data=!3m7!1e1!3m5!1sAF1QipMZ9YgnArbwEIbTDANeSQYFu9gNqpW_2Sv8FBvY!2e10!3e12!7i4352!8i1815" class="visiting-card">
                         <img src="./assets/img/visiting/royal_palace.jpg" alt="royal_palace" class="visiting-card__img">
@@ -221,7 +221,10 @@
                 <h2 class="tickets__title section-title">Buy Tickets</h2>
                 <div class="underline-title"></div>
                 <div class="tickets-content">
-                    <img src="./assets/img/tickets/tickets-img.jpg" alt="image" class="tickets-content__image">
+                    <picture class="tickets-content__image">
+                        <source media="(max-width: 1025px)" srcset="./assets/img/tickets/tickets_1024px.jpg">
+                        <img src="./assets/img/tickets/tickets-img.jpg" alt="image">
+                    </picture>  
                     <div class="tickets-content-radio">
                         <h4 class="tickets-content-radio__title">Ticket Type</h4>
                         <ul class="tickets-content-radio__list">
@@ -284,7 +287,7 @@
                         <p class="contacts-content-text__contact"><a href="tel:+330140205050" class="contacts-content-text__link">phone: +33(0) 1 40 20 50 50</a></p>
                         <p class="contacts-content-text__contact"><a href="mailto:info@louvre.fr" class="contacts-content-text__link">mail: info@louvre.fr</a></p>
                     </div>
-                    <div class="contact-context-map">
+                    <div class="contacts-content-map">
                         <img src="./assets/img/contacts/map.png" alt="map">
                     </div>
                 </div>

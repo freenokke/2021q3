@@ -3,6 +3,8 @@
     font-family: 'Roboto', sans-serif
     color: #fff
     padding: 75px 0 50px 0
+    @media screen and (max-width: 1025px) 
+        padding-top: 60px
     .container
         display: flex
         flex-direction: column
@@ -10,6 +12,10 @@
         display: flex
         align-items: flex-start 
         margin-bottom: 90px
+        @media screen and (max-width: 1440px) 
+            justify-content: space-between
+        @media screen and (max-width: 850px) 
+            flex-wrap: wrap
     .lower
         ul
             display: flex
@@ -38,6 +44,12 @@
         width: 195px
         height: 50px
         margin-right: 145px
+        @media screen and (max-width: 1440px) 
+            margin-right: 0
+        @media screen and (max-width: 1025px) 
+            margin-right: -67px
+        @media screen and (max-width: 1000px) 
+            margin-right: 0
     &-nav_1
         margin-right: 172px
         font-weight: 100
@@ -45,6 +57,8 @@
         line-height: 50px
         letter-spacing: 2px
         padding-top: 3px
+        @media screen and (max-width: 1440px) 
+            margin-right: 10px
         a
             color: #fff
             transition: 0.2s color
@@ -57,6 +71,8 @@
         line-height: 50px
         letter-spacing: 2px
         padding-top: 3px
+        @media screen and (max-width: 1440px) 
+            margin-right: 0
         a 
             color: #fff
             transition: 0.2s color
@@ -64,9 +80,13 @@
                 color: #9D8665
     &-social_links
         align-self: flex-end
+        @media screen and (max-width: 769px) 
+            margin-left: auto
         &__list
             display: flex
             margin-bottom: 18px
+            @media screen and (max-width: 1025px) 
+                margin-bottom: 10px
         &__item
             width: 48px
             height: 48px
