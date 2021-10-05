@@ -2793,8 +2793,10 @@ body {
   }
 }
 
-.footer .underline::after {
-  top: 260px;
+@media screen and (max-width: 769px) {
+  .footer .underline::after {
+    top: 260px;
+  }
 }
 
 .footer .container {
