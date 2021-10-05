@@ -2189,6 +2189,7 @@ body._lock {
             columns: 2;
     -webkit-column-gap: 24px;
             column-gap: 24px;
+    overflow-x: hidden;
   }
 }
 
