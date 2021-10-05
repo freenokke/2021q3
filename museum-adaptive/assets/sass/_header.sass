@@ -2,6 +2,7 @@ header
     background: #030303
     color: #FFFFFF
     font-family: 'Roboto', sans-serif
+    z-index: 99
 
 .header
     &-container
@@ -36,6 +37,8 @@ header
     &-menu__list
         display: flex
         // padding-left: 5px
+        @media screen and (max-width: 1025px)
+            flex-direction: column
         a
             color: #FFFFFF
             font-weight: 100
@@ -53,4 +56,89 @@ header
         margin-right: 56px
         &:last-child
             margin-right: 0px
+        @media screen and (max-width: 1025px)
+            margin-right: 0
+            margin-bottom: 25px
+            position: relative
+            &::after
+                content: ""
+                position: absolute
+                width: 12px
+                height: 12px
+                background-image: url('./assets/img/welcome/Group.svg')
+                right: 0
+                top: 50%
+                transform: translate(0, -50%)
+                background-position: center
+                background-repeat: no-repeat
+.menu__icon 
+	display: none
+
+@media screen and (max-width: 1025px)
+    .menu__icon 
+        z-index: 5
+        display: block
+        position: relative
+        // top: 10%
+        // left: 10%
+        right: 5px
+        width: 25px
+        height: 18px
+        cursor: pointer
+
+    .menu__icon span,
+    .menu__icon::before,
+    .menu__icon::after 
+        left: 0
+        position: absolute
+        height: 10%
+        width: 100%
+        transition: all 0.3s ease 0s
+        background-color: #fff
+
+    .menu__icon::before,
+    .menu__icon::after 
+        content: ""
+
+    .menu__icon::before 
+        top: 0
+
+    .menu__icon::after 
+        bottom: 0
+
+    .menu__icon span 
+        top: 50%
+        transform: scale(1) translate(0px, -50%)
+
+    .menu__icon._active span 
+        transform: scale(0) translate(0px, -50%)
+
+    .menu__icon._active::before 
+        top: 50%
+        transform: rotate(-45deg) translate(0px, -50%)
+
+    .menu__icon._active::after 
+        bottom: 50%
+        transform: rotate(45deg) translate(0px, 50%)
+
+
+    .menu__body 
+        position: fixed
+        top: 128px
+        left: -100%
+        width: 297px
+        height: 100%
+        background-color: #030303
+        padding: 35px 120px 287px 55px
+        transition: left 0.3s ease 0s
+        overflow: hidden
+        display: flex
+        justify-content: center
+        z-index: 95
+        flex-direction: column
+        justify-content: flex-start
+
+    .menu__body._active 
+        left: 0
+
 
