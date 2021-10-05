@@ -3,6 +3,7 @@ header {
   background: #030303;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
+  z-index: 99;
 }
 
 .header-container {
@@ -74,6 +75,15 @@ header {
   display: flex;
 }
 
+@media screen and (max-width: 1025px) {
+  .header-menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .header-menu__list a {
   color: #FFFFFF;
   font-weight: 100;
@@ -102,6 +112,112 @@ header {
 
 .header-menu__item:last-child {
   margin-right: 0px;
+}
+
+@media screen and (max-width: 1025px) {
+  .header-menu__item {
+    margin-right: 0;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  .header-menu__item::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-image: url("./assets/img/welcome/Group.svg");
+    right: 0;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.menu__icon {
+  display: none;
+}
+
+@media screen and (max-width: 1025px) {
+  .menu__icon {
+    z-index: 5;
+    display: block;
+    position: relative;
+    right: 5px;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .menu__icon span,
+  .menu__icon::before,
+  .menu__icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    background-color: #fff;
+  }
+  .menu__icon::before,
+  .menu__icon::after {
+    content: "";
+  }
+  .menu__icon::before {
+    top: 0;
+  }
+  .menu__icon::after {
+    bottom: 0;
+  }
+  .menu__icon span {
+    top: 50%;
+    -webkit-transform: scale(1) translate(0px, -50%);
+            transform: scale(1) translate(0px, -50%);
+  }
+  .menu__icon._active span {
+    -webkit-transform: scale(0) translate(0px, -50%);
+            transform: scale(0) translate(0px, -50%);
+  }
+  .menu__icon._active::before {
+    top: 50%;
+    -webkit-transform: rotate(-45deg) translate(0px, -50%);
+            transform: rotate(-45deg) translate(0px, -50%);
+  }
+  .menu__icon._active::after {
+    bottom: 50%;
+    -webkit-transform: rotate(45deg) translate(0px, 50%);
+            transform: rotate(45deg) translate(0px, 50%);
+  }
+  .menu__body {
+    position: fixed;
+    top: 128px;
+    left: -100%;
+    width: 297px;
+    height: 100%;
+    background-color: #030303;
+    padding: 35px 120px 287px 55px;
+    -webkit-transition: left 0.3s ease 0s;
+    transition: left 0.3s ease 0s;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: 95;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .menu__body._active {
+    left: 0;
+  }
 }
 
 /* Обнуление */
@@ -147,6 +263,10 @@ html,
 body {
   height: 100%;
   line-height: 1;
+}
+
+body._lock {
+  overflow: hidden;
 }
 
 .container {
@@ -306,7 +426,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  z-index: 99;
+  z-index: 88;
   position: absolute;
   top: 151px;
   left: 20px;
