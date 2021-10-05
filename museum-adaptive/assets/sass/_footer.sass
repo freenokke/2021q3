@@ -9,7 +9,8 @@
         padding-top: 40px
     .underline
         &::after
-            top: 260px
+            @media screen and (max-width: 769px)
+                top: 260px
     .container
         display: flex
         flex-direction: column
