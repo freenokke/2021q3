@@ -1354,7 +1354,7 @@ body._lock {
 
 @media screen and (max-width: 769px) {
   .explore-description {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
