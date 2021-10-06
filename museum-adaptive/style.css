@@ -1318,9 +1318,6 @@ body._lock {
 @media screen and (max-width: 1025px) {
   #explore .container {
     padding: 60px 0;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
   }
 }
 
@@ -1352,8 +1349,10 @@ body._lock {
   max-width: 660px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1024px) {
   .explore-description {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     max-width: 100%;
   }
 }
