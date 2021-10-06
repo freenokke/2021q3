@@ -1318,6 +1318,9 @@ body._lock {
 @media screen and (max-width: 1025px) {
   #explore .container {
     padding: 60px 0;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
