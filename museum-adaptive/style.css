@@ -3166,7 +3166,7 @@ body._lock {
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 421px) {
   .footer-logo {
     background-image: url("./assets/svg/logo_420px.svg");
   }
