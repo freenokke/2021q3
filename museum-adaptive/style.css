@@ -1349,7 +1349,7 @@ body._lock {
   max-width: 660px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1025px) {
   .explore-description {
     -ms-flex-item-align: start;
         align-self: flex-start;
