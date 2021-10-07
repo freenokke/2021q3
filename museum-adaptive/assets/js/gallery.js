@@ -67,22 +67,37 @@ const swiperNextArrow = document.querySelector('.handle__next-button');
 const swiperPrevArrow = document.querySelector('.handle__previous-button');
 const swiperBullet = document.querySelectorAll('.swiper-pagination-bullet');
 const currentSlideNumber = document.querySelector('.current');
-console.log(swiperBullet)
+const swiperBlock = document.querySelector('.swiper');
+const paginationBlock = document.querySelector('.welcome-slider_toolbar');
 
-swiperNextArrow.addEventListener('click', (e) => {
+// swiperNextArrow.addEventListener('click', (e) => {
+//     const currentSlideIndex  = document.querySelector('.swiper-slide-active');
+//     currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
+// })
+
+// swiperPrevArrow.addEventListener('click', (e) => {
+//     const currentSlideIndex  = document.querySelector('.swiper-slide-active');
+//     currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
+// })
+
+
+// swiperBullet.forEach((item) => {
+//     item.addEventListener('click', (e) => {
+//         const currentSlideIndex  = document.querySelector('.swiper-slide-active');
+//         currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
+//     })
+// })
+
+
+paginationBlock.addEventListener('click', (e) => {
     const currentSlideIndex  = document.querySelector('.swiper-slide-active');
     currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
+    
 })
 
-swiperPrevArrow.addEventListener('click', (e) => {
-    const currentSlideIndex  = document.querySelector('.swiper-slide-active');
-    currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
+swiper.on ('slideChange',  () => {
+    const currentSlideIndex  = swiper.realIndex;
+    console.log(currentSlideIndex)
+    currentSlideNumber.textContent = `0${+currentSlideIndex + 1}`;
 })
 
-
-swiperBullet.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        const currentSlideIndex  = document.querySelector('.swiper-slide-active');
-        currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
-    })
-})
