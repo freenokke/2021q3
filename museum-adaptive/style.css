@@ -889,7 +889,7 @@ body._lock {
 
 .welcome-slider_toolbar .slider-toolbar__handle .handle__previous-button {
   cursor: pointer;
-  width: 20px;
+  width: 30px;
   height: 8px;
   background-image: url("./assets/img/welcome/left.svg");
   background-repeat: no-repeat;
@@ -925,7 +925,7 @@ body._lock {
 
 .welcome-slider_toolbar .slider-toolbar__handle .handle__next-button {
   cursor: pointer;
-  width: 20px;
+  width: 30px;
   height: 8px;
   background-image: url("./assets/img/welcome/right.svg");
   background-repeat: no-repeat;
