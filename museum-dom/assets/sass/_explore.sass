@@ -2,7 +2,7 @@
     color: #fff
     background: #030303
     height: 865px
-    @media screen and (max-width: 1200px)
+    @media screen and (max-width: 1500px)
         height: auto
     .container
         width: 100%
@@ -10,7 +10,8 @@
         display: flex
         column-gap: 60px
         padding: 75px 0
-        @media screen and (max-width: 1200px) 
+        position: relative
+        @media screen and (max-width: 1500px) 
             flex-direction: column
             align-items: center
         @media screen and (max-width: 1025px)
@@ -67,12 +68,59 @@
     &__image
         object-fit: contain
         padding-top: 15px
+        position: relative
+        width: 720px
+        height: 700px
         @media screen and (max-width: 1025px)
             margin-top: 40px 
         @media screen and (max-width: 769px)
-            width: 100%
+            max-width: 100%
             margin-top: 0px
             padding: 0
         img
-            width: 100%
-        
+            // width: 100%
+
+// CSS for comparing slider
+
+.img-comp-img 
+    position: absolute
+
+.img-comp-overlay
+    overflow: hidden
+
+.img-comp-img img 
+    display: block
+    vertical-align: middle
+
+.img-comp-slider 
+    position: absolute
+    z-index: 9
+    cursor: ew-resize
+    /*set the appearance of the slider:*/
+    width: 40px
+    height: 40px
+    background-color: transparent
+    opacity: 1
+    border-radius: 50%
+    border: 5px solid #fff
+    &::after
+        content: ''
+        display: block
+        height: 250px
+        width: 5px
+        background-color: #fff
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 33px
+        position: absolute
+    &::before
+        content: ''
+        display: block
+        height: 250px
+        width: 5px
+        background-color: #fff
+        left: 50%
+        transform: translateX(-50%)
+        top: 33px
+        position: absolute
+

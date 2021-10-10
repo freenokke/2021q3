@@ -889,7 +889,7 @@ body._lock {
 
 .welcome-slider_toolbar .slider-toolbar__handle .handle__previous-button {
   cursor: pointer;
-  width: 20px;
+  width: 30px;
   height: 8px;
   background-image: url("./assets/img/welcome/left.svg");
   background-repeat: no-repeat;
@@ -925,7 +925,7 @@ body._lock {
 
 .welcome-slider_toolbar .slider-toolbar__handle .handle__next-button {
   cursor: pointer;
-  width: 20px;
+  width: 30px;
   height: 8px;
   background-image: url("./assets/img/welcome/right.svg");
   background-repeat: no-repeat;
@@ -1286,7 +1286,7 @@ body._lock {
   height: 865px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1500px) {
   #explore {
     height: auto;
   }
@@ -1301,9 +1301,10 @@ body._lock {
   -webkit-column-gap: 60px;
           column-gap: 60px;
   padding: 75px 0;
+  position: relative;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1500px) {
   #explore .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1430,6 +1431,9 @@ body._lock {
   -o-object-fit: contain;
      object-fit: contain;
   padding-top: 15px;
+  position: relative;
+  width: 720px;
+  height: 700px;
 }
 
 @media screen and (max-width: 1025px) {
@@ -1440,14 +1444,62 @@ body._lock {
 
 @media screen and (max-width: 769px) {
   .explore__image {
-    width: 100%;
+    max-width: 100%;
     margin-top: 0px;
     padding: 0;
   }
 }
 
-.explore__image img {
-  width: 100%;
+.img-comp-img {
+  position: absolute;
+}
+
+.img-comp-overlay {
+  overflow: hidden;
+}
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.img-comp-slider::after {
+  content: '';
+  display: block;
+  height: 250px;
+  width: 5px;
+  background-color: #fff;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 33px;
+  position: absolute;
+}
+
+.img-comp-slider::before {
+  content: '';
+  display: block;
+  height: 250px;
+  width: 5px;
+  background-color: #fff;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 33px;
+  position: absolute;
 }
 
 #video {
