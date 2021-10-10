@@ -14,6 +14,7 @@
         padding-bottom: 40px
 .video
     &-content
+        width: 100%
         @media screen and (max-width: 1440px)  
             width: 100%   
     &-content__toolbar
@@ -213,14 +214,17 @@
                 
             
     &-content__video-playlist
-        display: flex
-        justify-content: space-between
-        margin-bottom: 40px
+        overflow-x: hidden
+        /*Remove CSS above for correctly swiper work */
+
+        // display: flex
+        // justify-content: space-between
+        // margin-bottom: 40px
         video
-            max-width: 452px 
+            // max-width: 452px 
         iframe
             @media screen and (max-width: 1400px) 
-                max-width: 400px  
+                // max-width: 400px  
                 max-height: 220px  
             @media screen and (max-width: 1100px) 
                 max-width: 300px
@@ -261,57 +265,75 @@
         display: flex
         justify-content: center
         button
-            margin-right: 20px
-            cursor: pointer
-            &:last-child
-                margin-right: 0  
-            &:nth-child(2)
-                background-color: #333333
-            @media screen and (max-width: 769px) 
-                margin-right: 18px  
-            @media screen and (max-width: 421px) 
-                margin-right: 20px  
+            // cursor: pointer
+            // margin-right: 20px
+            // &:last-child
+            //     margin-right: 0  
+            // &:nth-child(2)
+            //     background-color: #333333
+            // @media screen and (max-width: 769px) 
+            //     margin-right: 18px  
+            // @media screen and (max-width: 421px) 
+            //     margin-right: 20px  
         @media screen and (max-width: 769px)
             margin-bottom: 40px                 
         @media screen and (max-width: 421px)
-            margin-bottom: 0            
-        .playlist-pagination
+            margin-bottom: 0   
+        .playlist-pagination         
             &__item
                 display: inline-block
                 background-color: #999999
                 height: 12px
                 width: 12px
                 border-radius: 50px
+                cursor: pointer
+                margin-right: 20px
+                &:last-child
+                    margin-right: 0  
                 &:hover
                     background-color: #710707
                 @media screen and (max-width: 421px)
                     width: 8px
                     height: 8px
-            &__symbol
-                &:hover
-                    filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%)
-        .previous
-            width: 10px
-            height: 12px
-            // margin-left: 50px
-            background-image: url('./assets/img/video/playlist_prev.svg')
-            background-repeat: no-repeat
-            background-position: center center
-            background-color: transparent 
-            @media screen and (max-width: 421px)
-                width: 7px
-                height: 8px     
-        .next
-            width: 10px
-            height: 12px
-            // margin-left: 50px
-            background-image: url('./assets/img/video/playlist_next.svg')
-            background-repeat: no-repeat
-            background-position: center center
-            background-color: transparent  
-            @media screen and (max-width: 421px)
-                width: 7px
-                height: 8px 
+        .bullet-active
+            background-color: #333333
+
+.playlist-pagination
+    &__container
+        margin: 0 auto
+        margin-top: 40px
+        display: flex
+        max-width: 200px
+        justify-content: space-between
+
+.previous
+    width: 10px
+    height: 12px
+    // margin-left: 50px
+    background-image: url('./assets/img/video/playlist_prev.svg')
+    background-repeat: no-repeat
+    background-position: center center
+    background-color: transparent 
+    cursor: pointer
+    &:hover
+        filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%)
+    @media screen and (max-width: 421px)
+        width: 7px
+        height: 8px     
+.next
+    width: 10px
+    height: 12px
+    // margin-left: 50px
+    background-image: url('./assets/img/video/playlist_next.svg')
+    background-repeat: no-repeat
+    background-position: center center
+    background-color: transparent  
+    cursor: pointer
+    &:hover
+        filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%)
+    @media screen and (max-width: 421px)
+        width: 7px
+        height: 8px 
 .progress 
     background: linear-gradient(to right, #710707 0%, #710707 54%, #C4C4C4 40%, #C4C4C4 100%)
     border: none
