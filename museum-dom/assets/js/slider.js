@@ -89,12 +89,57 @@ const swiper2 = new Swiper('.swiper-video-playlist', {
     },
 });
 
-const videoSection = document.getElementById('video')
 const playlistPaginationBlock = document.querySelector('.playlist-pagination__container');
+const videoSection = document.getElementById('video')
+const videoContentBlock = videoSection.querySelector('.video-content')
+const videoTag = videoSection.querySelector("video");
+const videoToolbarBlock = videoSection.querySelector('.video-content__toolbar')
+                /*Handle elements */
+const toolbarPlayBtn = videoSection.querySelector('.play_button');
+const mainPlayBtn = videoSection.querySelector('.main_play_button');
 
 playlistPaginationBlock.addEventListener('click', (e) => {
     const currentSlideIndex  = videoSection.querySelector('.swiper-slide-active');
     let slideNum = currentSlideIndex.dataset.index;
-    const img = videoSection.querySelector("img");
-    img.setAttribute('src', `./assets/img/video/poster${slideNum}.jpg` );  
+    sourceTag = videoTag.firstElementChild;
+    videoTag.setAttribute('poster', `./assets/img/video/poster${slideNum}.jpg` );  
+    sourceTag.setAttribute('src', `./assets/video/video${slideNum}.mp4`);
+    videoTag.load();
 })
+
+videoContentBlock.addEventListener('click', (e) => {
+    if (e.target == toolbarPlayBtn) {
+
+        if (videoTag.paused) {
+            videoTag.play();
+            toolbarPlayBtn.style.backgroundImage = 'url(./assets/img/video/pause.svg)'
+            mainPlayBtn.style.display = "none";
+        } else {
+            videoTag.pause();
+            toolbarPlayBtn.style.backgroundImage = 'url(./assets/img/video/toolbar-icon-play.svg)'
+            mainPlayBtn.style.display = "block";
+        }
+    }
+
+    if (e.target == videoTag) {
+        if (videoTag.paused) {
+            videoTag.play();
+            toolbarPlayBtn.style.backgroundImage = 'url(./assets/img/video/pause.svg)'
+            mainPlayBtn.style.display = "none";
+        } else {
+            videoTag.pause();
+            toolbarPlayBtn.style.backgroundImage = 'url(./assets/img/video/toolbar-icon-play.svg)'
+            mainPlayBtn.style.display = "block";
+        }
+    }
+
+    if (e.target == mainPlayBtn) {
+        videoTag.play();
+        mainPlayBtn.style.display = "none";
+    }
+
+})
+
+
+
+

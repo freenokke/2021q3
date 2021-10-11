@@ -1779,7 +1779,6 @@ body._lock {
 .video-content__video-image {
   display: block;
   position: relative;
-  height: 650px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -1816,6 +1815,10 @@ body._lock {
 .video-content__video-image img {
   height: 100%;
   width: 100%;
+}
+
+.video-content__video-image video {
+  vertical-align: bottom;
 }
 
 .video-content__video-image .main_play_button {
