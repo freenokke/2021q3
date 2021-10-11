@@ -1479,7 +1479,7 @@ body._lock {
 .img-comp-slider::after {
   content: '';
   display: block;
-  height: 250px;
+  height: 315px;
   width: 5px;
   background-color: #fff;
   left: 50%;
@@ -1492,7 +1492,7 @@ body._lock {
 .img-comp-slider::before {
   content: '';
   display: block;
-  height: 250px;
+  height: 348px;
   width: 5px;
   background-color: #fff;
   left: 50%;
@@ -1533,6 +1533,10 @@ body._lock {
     padding-top: 39px;
     padding-bottom: 40px;
   }
+}
+
+.video-content {
+  width: 100%;
 }
 
 @media screen and (max-width: 1440px) {
@@ -1775,7 +1779,6 @@ body._lock {
 .video-content__video-image {
   display: block;
   position: relative;
-  height: 650px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -1812,6 +1815,10 @@ body._lock {
 .video-content__video-image img {
   height: 100%;
   width: 100%;
+}
+
+.video-content__video-image video {
+  vertical-align: bottom;
 }
 
 .video-content__video-image .main_play_button {
@@ -1924,22 +1931,12 @@ body._lock {
 }
 
 .video-content__video-playlist {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 40px;
-}
-
-.video-content__video-playlist video {
-  max-width: 452px;
+  overflow-x: hidden;
+  /*Remove CSS above for correctly swiper work */
 }
 
 @media screen and (max-width: 1400px) {
   .video-content__video-playlist iframe {
-    max-width: 400px;
     max-height: 220px;
   }
 }
@@ -2029,31 +2026,6 @@ body._lock {
           justify-content: center;
 }
 
-.video-content__playlist-pagination button {
-  margin-right: 20px;
-  cursor: pointer;
-}
-
-.video-content__playlist-pagination button:last-child {
-  margin-right: 0;
-}
-
-.video-content__playlist-pagination button:nth-child(2) {
-  background-color: #333333;
-}
-
-@media screen and (max-width: 769px) {
-  .video-content__playlist-pagination button {
-    margin-right: 18px;
-  }
-}
-
-@media screen and (max-width: 421px) {
-  .video-content__playlist-pagination button {
-    margin-right: 20px;
-  }
-}
-
 @media screen and (max-width: 769px) {
   .video-content__playlist-pagination {
     margin-bottom: 40px;
@@ -2072,6 +2044,12 @@ body._lock {
   height: 12px;
   width: 12px;
   border-radius: 50px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.video-content__playlist-pagination .playlist-pagination__item:last-child {
+  margin-right: 0;
 }
 
 .video-content__playlist-pagination .playlist-pagination__item:hover {
@@ -2085,38 +2063,61 @@ body._lock {
   }
 }
 
-.video-content__playlist-pagination .playlist-pagination__symbol:hover {
-  -webkit-filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%);
-          filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%);
+.video-content__playlist-pagination .bullet-active {
+  background-color: #333333;
 }
 
-.video-content__playlist-pagination .previous {
+.playlist-pagination__container {
+  margin: 0 auto;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 200px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.previous {
   width: 10px;
   height: 12px;
   background-image: url("./assets/img/video/playlist_prev.svg");
   background-repeat: no-repeat;
   background-position: center center;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.previous:hover {
+  -webkit-filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%);
+          filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%);
 }
 
 @media screen and (max-width: 421px) {
-  .video-content__playlist-pagination .previous {
+  .previous {
     width: 7px;
     height: 8px;
   }
 }
 
-.video-content__playlist-pagination .next {
+.next {
   width: 10px;
   height: 12px;
   background-image: url("./assets/img/video/playlist_next.svg");
   background-repeat: no-repeat;
   background-position: center center;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.next:hover {
+  -webkit-filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%);
+          filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%);
 }
 
 @media screen and (max-width: 421px) {
-  .video-content__playlist-pagination .next {
+  .next {
     width: 7px;
     height: 8px;
   }

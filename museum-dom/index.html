@@ -189,7 +189,21 @@
                 </div>
                 <div class="video-content">
                     <div class="video-content__video-image">
-                        <img src="./assets/img/video/video_poster.jpg" alt="louvre_img">
+                        <video width="100%" height="auto" poster="./assets/img/video/poster1.jpg">
+                            <source src="./assets/video/video1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                        </video>
+                        <!-- <video width="100%" height="100%" controls="controls" poster="./assets/img/video/poster2.jpg">
+                            <source src="./assets/video/video2.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                        </video>
+                        <video width="100%" height="100%" controls="controls" poster="./assets/img/video/poster3.jpg">
+                            <source src="./assets/video/video3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                        </video>
+                        <video width="100%" height="100%" controls="controls" poster="./assets/img/video/poster4.jpg">
+                            <source src="./assets/video/video4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                        </video>
+                        <video width="100%" height="100%" controls="controls" poster="./assets/img/video/poster5.jpg">
+                            <source src="./assets/video/video5.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                        </video> -->
                         <button type="button" class="main_play_button"></button>
                     </div>
                     <div class="video-content__toolbar">
@@ -207,17 +221,33 @@
                         <button type="button" class="fullscreen_button"></button>
                     </div>
                     <div class="video-content__video-playlist">
-                        <iframe width="452" height="254" src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe width="452" height="254" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe width="452" height="254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="swiper-video-playlist">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div data-index='1' class="swiper-slide">
+                                    <iframe width="452" height="254" loading="lazy" src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div data-index='2' class="swiper-slide">
+                                    <iframe width="452" height="254" loading="lazy" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>         
+                                </div>
+                                <div data-index='3' class="swiper-slide">
+                                    <iframe width="452" height="254" loading="lazy" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div data-index='4' class="swiper-slide">
+                                    <iframe width="452" height="254" loading="lazy" src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div data-index='5' class="swiper-slide">
+                                    <iframe width="452" height="254" src="https://www.youtube.com/embed/2OR0OCr6uRE" loading="lazy" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="video-content__playlist-pagination">
+                    <div class="playlist-pagination__container">
                         <button type="button" class="playlist-pagination__symbol previous"></button>
-                        <button type="button" class="playlist-pagination__item bullet"></button>
-                        <button type="button" class="playlist-pagination__item bullet"></button>
-                        <button type="button" class="playlist-pagination__item bullet"></button>
-                        <button type="button" class="playlist-pagination__item bullet"></button>
-                        <button type="button" class="playlist-pagination__item bullet"></button>
+                        <div class="video-content__playlist-pagination">
+                            
+                        </div>
                         <button type="button" class="playlist-pagination__symbol next"></button>
                     </div>
                 </div>
@@ -363,6 +393,7 @@
     </footer>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="./assets/js/gallery.js" defer></script>
+    <script src="./assets/js/slider.js" defer></script>
     <script src="./assets/js/burger.js" defer></script>
     <script src="./assets/js/explore.js" defer></script>
 </body>
