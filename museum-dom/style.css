@@ -2124,8 +2124,8 @@ body._lock {
 }
 
 .progress {
-  background: -webkit-gradient(linear, left top, right top, from(#710707), color-stop(54%, #710707), color-stop(40%, #C4C4C4), to(#C4C4C4));
-  background: linear-gradient(to right, #710707 0%, #710707 54%, #C4C4C4 40%, #C4C4C4 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#710707), color-stop(0%, #710707), color-stop(0%, #C4C4C4), to(#C4C4C4));
+  background: linear-gradient(to right, #710707 0%, #710707 0%, #C4C4C4 0%, #C4C4C4 100%);
   border: none;
   height: 8px;
   outline: none;
