@@ -135,7 +135,7 @@ progress2.addEventListener('input', function() {
 
 iframeVid.forEach((item) => {
     playlistPaginationBlock.addEventListener('click', () => {
-        item.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        item.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
     })
 })
 
