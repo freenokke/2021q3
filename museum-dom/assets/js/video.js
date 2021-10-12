@@ -21,6 +21,7 @@ const videoSection = document.getElementById('video')
 const videoContentBlock = videoSection.querySelector('.video-content')
 const videoTag = videoSection.querySelector("video");
 const videoToolbarBlock = videoSection.querySelector('.video-content__toolbar')
+const iframeVid = document.querySelectorAll('iframe');
                 /*Кнопки управления */
 const toolbarPlayBtn = videoSection.querySelector('.play_button');
 const toolbarVolumeBtn = videoSection.querySelector('.volume_button');
@@ -128,5 +129,13 @@ progress2.addEventListener('input', function() {
     console.log(videoTag.volume)
     if (this.value == 0) toolbarVolumeBtn.style.backgroundImage = 'url(./assets/img/video/mute.svg)';
     else toolbarVolumeBtn.style.backgroundImage = 'url(./assets/img/video/toolbar-icon-volume.svg)';
+})
+
+
+
+iframeVid.forEach((item) => {
+    playlistPaginationBlock.addEventListener('click', () => {
+        item.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+    })
 })
 

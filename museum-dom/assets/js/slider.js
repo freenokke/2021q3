@@ -55,6 +55,7 @@ const paginationBlock = document.querySelector('.welcome-slider_toolbar');
 paginationBlock.addEventListener('click', (e) => {
     const currentSlideIndex  = welcomeSection.querySelector('.swiper-slide-active');
     currentSlideNumber.textContent = `0${currentSlideIndex.dataset.index}`;
+    iframeVid.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*')
     
 })
 
@@ -88,10 +89,5 @@ const swiper2 = new Swiper('.swiper-video-playlist', {
     prevEl: '.previous',
     },
 });
-
-
-
-
-
 
 
