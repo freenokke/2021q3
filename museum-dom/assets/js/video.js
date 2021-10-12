@@ -14,17 +14,18 @@ const progress2 = document.querySelector('.progress-volume');
 //     this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #fff ${value}%, #C4C4C4 100%)`
 // })
 
-            // Custom Player
+            // Объявление переменных
 
 const playlistPaginationBlock = document.querySelector('.playlist-pagination__container');
 const videoSection = document.getElementById('video')
 const videoContentBlock = videoSection.querySelector('.video-content')
 const videoTag = videoSection.querySelector("video");
 const videoToolbarBlock = videoSection.querySelector('.video-content__toolbar')
-                /*Handle elements */
+                /*Кнопки управления */
 const toolbarPlayBtn = videoSection.querySelector('.play_button');
+const toolbarVolumeBtn = videoSection.querySelector('.volume_button');
 const mainPlayBtn = videoSection.querySelector('.main_play_button');
-
+                    // обработчик по клику на элементы управления слайдером с видео
 playlistPaginationBlock.addEventListener('click', (e) => {
     const currentSlideIndex  = videoSection.querySelector('.swiper-slide-active');
     let slideNum = currentSlideIndex.dataset.index;
@@ -35,8 +36,9 @@ playlistPaginationBlock.addEventListener('click', (e) => {
     mainPlayBtn.style.display = "block";
     toolbarPlayBtn.style.backgroundImage = 'url(./assets/img/video/toolbar-icon-play.svg)'
 })
-
+            // Обработчик кликов по блоку с видео (делегирование)
 videoContentBlock.addEventListener('click', (e) => {
+            //клик по кнопке плей в панели управления
     if (e.target == toolbarPlayBtn) {
 
         if (videoTag.paused) {
@@ -49,7 +51,7 @@ videoContentBlock.addEventListener('click', (e) => {
             mainPlayBtn.style.display = "block";
         }
     }
-
+            //клик по области видео (убираем кнопку плей на самой зоне воспроизведения)
     if (e.target == videoTag) {
         if (videoTag.paused) {
             videoTag.play();
@@ -61,23 +63,38 @@ videoContentBlock.addEventListener('click', (e) => {
             mainPlayBtn.style.display = "block";
         }
     }
-
+            // клик по кнопке в зоне воспроизведения
     if (e.target == mainPlayBtn) {
         videoTag.play();
         mainPlayBtn.style.display = "none";
         toolbarPlayBtn.style.backgroundImage = 'url(./assets/img/video/pause.svg)'
     }
-
+            // клик по кнопке громкости
+    if (e.target == toolbarVolumeBtn) {
+        if (videoTag.volume > 0) {
+            const value = 0;
+            progress2.value = value;
+            videoTag.volume = value;
+            progress2.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value * 100}%, #fff ${value * 100}%, #C4C4C4 100%)`
+            toolbarVolumeBtn.style.backgroundImage = 'url(./assets/img/video/mute.svg)';
+        } else {
+            const value = 0.5;
+            progress2.value = value;
+            videoTag.volume = value;
+            progress2.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value * 100}%, #fff ${value * 100}%, #C4C4C4 100%)`
+            toolbarVolumeBtn.style.backgroundImage = 'url(./assets/img/video/toolbar-icon-volume.svg)';
+        }       
+    }
 })
 
 
-
+            //отображение произведения видео
 videoTag.addEventListener('timeupdate', function() {
     const value = this.currentTime * 100 / this.duration || 0;
     progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #fff ${value}%, #C4C4C4 100%)`
     progress.value = this.currentTime * 100 / this.duration || 0;
 })
-
+        //Переход ползунка прогрессбара в место клика
 progress.addEventListener('click', function(e) {
     let xPos = Math.floor(e.pageX - progress.offsetLeft);
     let current = xPos / (progress.offsetWidth / 100);
@@ -88,10 +105,13 @@ progress.addEventListener('click', function(e) {
     // videoTag.currentTime = (length / 100) * this.value;
 
 })
-
+            // Громкость
 progress2.addEventListener('input', function() {
     let volume = this.value;
     this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${volume * 100}%, #fff ${volume * 100}%, #C4C4C4 100%)`
     videoTag.volume = volume;
     console.log(videoTag.volume)
+    if (this.value == 0) toolbarVolumeBtn.style.backgroundImage = 'url(./assets/img/video/mute.svg)';
+    else toolbarVolumeBtn.style.backgroundImage = 'url(./assets/img/video/toolbar-icon-volume.svg)';
 })
+
