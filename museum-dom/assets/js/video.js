@@ -24,7 +24,10 @@ const videoToolbarBlock = videoSection.querySelector('.video-content__toolbar')
                 /*Кнопки управления */
 const toolbarPlayBtn = videoSection.querySelector('.play_button');
 const toolbarVolumeBtn = videoSection.querySelector('.volume_button');
+const toolbarFullScrBtn = videoSection.querySelector('.fullscreen_button');
 const mainPlayBtn = videoSection.querySelector('.main_play_button');
+
+
                     // обработчик по клику на элементы управления слайдером с видео
 playlistPaginationBlock.addEventListener('click', (e) => {
     const currentSlideIndex  = videoSection.querySelector('.swiper-slide-active');
@@ -38,7 +41,7 @@ playlistPaginationBlock.addEventListener('click', (e) => {
 })
             // Обработчик кликов по блоку с видео (делегирование)
 videoContentBlock.addEventListener('click', (e) => {
-            //клик по кнопке плей в панели управления
+            // если клик по кнопке плей в панели управления
     if (e.target == toolbarPlayBtn) {
 
         if (videoTag.paused) {
@@ -51,7 +54,7 @@ videoContentBlock.addEventListener('click', (e) => {
             mainPlayBtn.style.display = "block";
         }
     }
-            //клик по области видео (убираем кнопку плей на самой зоне воспроизведения)
+            //если клик по области видео (убираем кнопку плей на самой зоне воспроизведения)
     if (e.target == videoTag) {
         if (videoTag.paused) {
             videoTag.play();
@@ -63,13 +66,13 @@ videoContentBlock.addEventListener('click', (e) => {
             mainPlayBtn.style.display = "block";
         }
     }
-            // клик по кнопке в зоне воспроизведения
+            //если  клик по основной кнопке в зоне воспроизведения
     if (e.target == mainPlayBtn) {
         videoTag.play();
         mainPlayBtn.style.display = "none";
         toolbarPlayBtn.style.backgroundImage = 'url(./assets/img/video/pause.svg)'
     }
-            // клик по кнопке громкости
+            // если клик по кнопке громкости
     if (e.target == toolbarVolumeBtn) {
         if (videoTag.volume > 0) {
             const value = 0;
@@ -85,6 +88,11 @@ videoContentBlock.addEventListener('click', (e) => {
             toolbarVolumeBtn.style.backgroundImage = 'url(./assets/img/video/toolbar-icon-volume.svg)';
         }       
     }
+        // если клик по кнопке полноэкранного режима
+    if (e.target == toolbarFullScrBtn ) {
+        videoTag.requestFullscreen();
+    }
+    
 })
 
 
@@ -93,6 +101,13 @@ videoTag.addEventListener('timeupdate', function() {
     const value = this.currentTime * 100 / this.duration || 0;
     progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #fff ${value}%, #C4C4C4 100%)`
     progress.value = this.currentTime * 100 / this.duration || 0;
+
+    if (progress.value == 100) {
+        toolbarPlayBtn.style.backgroundImage = 'url(./assets/img/video/toolbar-icon-play.svg)'
+        mainPlayBtn.style.display = "block";
+        progress.value = 0;   
+        progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${0}%, #fff ${0}%, #C4C4C4 100%)`
+    }
 })
         //Переход ползунка прогрессбара в место клика
 progress.addEventListener('click', function(e) {
