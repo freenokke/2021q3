@@ -9,10 +9,10 @@ const progress2 = document.querySelector('.progress-volume');
 //     this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #fff ${value}%, #C4C4C4 100%)`
 // })
 
-progress2.addEventListener('input', function() {
-    const value = this.value;
-    this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #fff ${value}%, #C4C4C4 100%)`
-})
+// progress2.addEventListener('input', function() {
+//     const value = this.value;
+//     this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #fff ${value}%, #C4C4C4 100%)`
+// })
 
             // Custom Player
 
@@ -82,7 +82,16 @@ progress.addEventListener('click', function(e) {
     let xPos = Math.floor(e.pageX - progress.offsetLeft);
     let current = xPos / (progress.offsetWidth / 100);
     videoTag.currentTime = videoTag.duration * (current / 100);
-    
-    console.log(e.pageX)
+
+    //альтернативный
+    // const length = videoTag.duration;
+    // videoTag.currentTime = (length / 100) * this.value;
+
 })
 
+progress2.addEventListener('input', function() {
+    let volume = this.value;
+    this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${volume * 100}%, #fff ${volume * 100}%, #C4C4C4 100%)`
+    videoTag.volume = volume;
+    console.log(videoTag.volume)
+})

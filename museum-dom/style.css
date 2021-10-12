@@ -2180,8 +2180,8 @@ body._lock {
 }
 
 .progress-volume {
-  background: -webkit-gradient(linear, left top, right top, from(#710707), color-stop(42%, #710707), color-stop(40%, #C4C4C4), to(#C4C4C4));
-  background: linear-gradient(to right, #710707 0%, #710707 42%, #C4C4C4 40%, #C4C4C4 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#710707), color-stop(50%, #710707), color-stop(50%, #C4C4C4), to(#C4C4C4));
+  background: linear-gradient(to right, #710707 0%, #710707 50%, #C4C4C4 50%, #C4C4C4 100%);
   border: none;
   height: 8px;
   width: 155px;
