@@ -2266,8 +2266,13 @@ body._lock {
 }
 
 #gallery .gallery__img {
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+  opacity: 0;
   display: inline-block;
   margin-bottom: 24px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 #gallery .gallery__img:nth-child(1), #gallery .gallery__img:nth-child(11) {
@@ -2295,8 +2300,14 @@ body._lock {
 
 @media screen and (max-width: 769px) {
   #gallery .gallery__img {
-    width: 352px;
+    width: 352p;
   }
+}
+
+#gallery .gallery__img.active {
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
 
 #gallery .picture-container {

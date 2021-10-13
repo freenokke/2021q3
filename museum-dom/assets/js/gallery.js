@@ -1,3 +1,4 @@
+// Автоматическая генерация изображений
 const pictureInnerContainer  = document.querySelector('.picture-container-inner');
 
 function shuffle(array) {
@@ -23,17 +24,40 @@ mixedArr.map((item) => {
     pictureInnerContainer.append(item);
 })
 
+// Анимация при скролле
 
-// console.log('******Выполненные пункты:******')
-// console.log('Вёрстка валидная +10')
-// console.log('Вёрстка семантическая. В коде страницы присутствуют следующие элементы (указано минимальное количество, может быть больше) +24')
-// console.log('Вёрстка соответствует макету +45')
-// console.log('Требования к css +18')
-// console.log('******Частично выполненные пункты******')
-// console.log('Интерактивность, реализуемая через css +20')
-// console.log('Интерактивность, реализуемая через js +14')
-// console.log('******Невыполненные пункты******')
-// console.log('Форма покупки билетов +0')
+function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+
+const galleryImages = document.querySelectorAll('.gallery__img');
+console.log("🚀 ~ file: gallery.js ~ line 45 ~ sliderImages", gallery)
 
 
+function checkSlide(e) {
+    galleryImages.forEach((slideImage) => {
+        const slideInAt = (window.scrollY + window.innerHeight) - slideImage.height / 2;
+        const imageBottom = slideImage.offsetParent.offsetTop + slideImage.height;
+        const isHalfShown = slideInAt > slideImage.offsetTop;
+        const isNotScrolledPast = window.scrollY > imageBottom;
+        if (isHalfShown && isNotScrolledPast) {
+            slideImage.classList.add('active');
+        } else {
+            console.log('false')
+            slideImage.classList.remove('active');
+        }
+    })
+}
 
+window.addEventListener('scroll', debounce(checkSlide));
