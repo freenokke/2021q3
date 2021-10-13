@@ -2271,8 +2271,8 @@ body._lock {
   opacity: 0;
   display: inline-block;
   margin-bottom: 24px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 #gallery .gallery__img:nth-child(1), #gallery .gallery__img:nth-child(11) {

@@ -48,9 +48,11 @@ console.log("🚀 ~ file: gallery.js ~ line 45 ~ sliderImages", gallery)
 function checkSlide(e) {
     galleryImages.forEach((slideImage) => {
         const slideInAt = (window.scrollY + window.innerHeight) - slideImage.height / 2;
-        const imageBottom = slideImage.offsetParent.offsetTop + slideImage.height;
-        const isHalfShown = slideInAt > slideImage.offsetTop;
-        const isNotScrolledPast = window.scrollY > imageBottom;
+        const imageBottom = slideImage.offsetParent.offsetTop + slideImage.offsetTop;
+        const isHalfShown = slideInAt > slideImage.offsetParent.offsetTop;
+        // console.log("isHalfShown", isHalfShown);
+        const isNotScrolledPast = slideInAt > imageBottom;
+        console.log(imageBottom)
         if (isHalfShown && isNotScrolledPast) {
             slideImage.classList.add('active');
         } else {
