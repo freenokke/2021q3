@@ -22,8 +22,11 @@
                 font-size: 28px
                 line-height: 40px
         &__img
+            transform: translateY(30%)
+            opacity: 0
             display: inline-block
             margin-bottom: 24px
+            transition: all 1s
             &:nth-child(1), &:nth-child(11)              
                 margin-top: 50px
             @media screen and (max-width: 1440px)
@@ -38,11 +41,15 @@
             @media screen and (max-width: 1000px)
                 max-width: 100%
             @media screen and (max-width: 769px)
-                width: 352px
+                width: 352p
+            &.active
+                opacity: 1
+                transform: translateY(0%)
     .picture-container
         max-height: 2126px
         overflow-y: hidden
         position: relative
+        overflow-x: hidden
         &::after
             position: absolute
             content: ''
@@ -65,7 +72,6 @@
             @media screen and (max-width: 769px)
                 columns: 2
                 column-gap: 24px
-                overflow-x: hidden
         @media screen and (max-width: 1025px)
             max-height: 1400px        
         @media screen and (max-width: 769px)
