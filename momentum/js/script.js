@@ -1,3 +1,3 @@
-import dateTime from "./date.js";
+import dateTimeGreeting from "./date.js";
 
-dateTime();
+dateTimeGreeting();
