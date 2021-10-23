@@ -6,7 +6,10 @@
     const sliderArrowLeft = document.querySelector('.slide-prev')
     const sliderArrowRight = document.querySelector('.slide-next')
     let randomNum = getRandomNum();
-    console.log("🚀 randomNum", randomNum)
+    const weatherIcon = document.querySelector('.weather-icon');
+    const temperature = document.querySelector('.temperature');
+    const weatherDescription = document.querySelector('.weather-description');
+    const inputCity = document.querySelector('.city')
 
 //**Фунция вывода времени/даты/приветствия**
 function showTimeDateGreeting() {
@@ -26,20 +29,6 @@ function showTimeDateGreeting() {
     setTimeout(showTimeDateGreeting, 1000);
 }
 
-    // сохранение введенного имени в LocalStorage
-function setLocalStorage() {
-    localStorage.setItem('name', inputName.value);
-}
-
-window.addEventListener('beforeunload', setLocalStorage)
-
-function getLocalStorage() {
-    if(localStorage.getItem('name')) {
-        inputName.value = localStorage.getItem('name');
-    }
-}
-window.addEventListener('load', getLocalStorage)
-
 //**Вывод фоновых картинок в зависимости от времени суток**
 
     // установка рандомных изображений
@@ -52,32 +41,27 @@ function setBg(num) {
         img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/morning/${num ? bgSLiderNum : bgNum}.jpg`;
         img.onload = () => {
             bodyElement.style.backgroundImage = `url(${img.src})`;
-            console.log(bodyElement.style.backgroundImage)
         };
     } else if (timeOfDay == 'afternoon') {
         img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/afternoon/${num ? bgSLiderNum : bgNum}.jpg`;
         img.onload = () => {
             bodyElement.style.backgroundImage = `url(${img.src})`;
-            console.log(bodyElement.style.backgroundImage)
         };
     } else if (timeOfDay == 'evening') {
         img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/${num ? bgSLiderNum : bgNum}.jpg`;
         img.onload = () => {
             bodyElement.style.backgroundImage = `url(${img.src})`;
-            console.log(bodyElement.style.backgroundImage)
         };
     } else if (timeOfDay == 'night') {
         img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/night/${num ? bgSLiderNum : bgNum}.jpg`;
         img.onload = () => {
             bodyElement.style.backgroundImage = `url(${img.src})`;
-            console.log(bodyElement.style.backgroundImage)
         };
     }       
 }
 
 function getSlidePrev() {
     let i = randomNum;
-    console.log("🚀 getSlidePrev ~ i", i, randomNum)
     if (i > 1) {
         randomNum -= 1;
     } else {
@@ -88,7 +72,6 @@ function getSlidePrev() {
 
 function getSlideNext() {
     let i = randomNum;
-    console.log("🚀 getSlideNext ~ i", i, randomNum)
     if (i < 20) {
         randomNum += 1;
     } else {
@@ -120,9 +103,47 @@ function getTimeOfDay() {
     }
 }
 
+//**Выводим данные о погоде через API
+async function getWeather(city) { 
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&appid=0a8e313b2ad9cc6efaa2adc43baf9561&units=metric`;
+    console.log("🚀 ~ file: script.js ~ line 123 ~ getWeather ~ url", url)
+    const res = await fetch(url);
+    const data = await res.json(); 
+    console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
 
+    weatherIcon.className = 'weather-icon owf';
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    temperature.textContent = `${data.main.temp}°C`;
+    weatherDescription.textContent = data.weather[0].description;
+}
 
+// сохранение введенных данных в LocalStorage
+function setLocalStorage() {
+    localStorage.setItem('name', inputName.value);
+    localStorage.setItem('city', inputCity.value);
+}
 
+window.addEventListener('beforeunload', setLocalStorage)
+    // получение данных из LS при перезагрузке для inputName
+window.addEventListener('load', () => {
+    if(localStorage.getItem('name')) {
+        inputName.value = localStorage.getItem('name');
+    }
+})
+    // получение данных из LS при перезагрузке для inputCity
+window.addEventListener('load', () => {
+    if(localStorage.getItem('city')) {
+        inputCity.value = localStorage.getItem('city');
+        getWeather(inputCity.value);
+    } else {
+        inputCity.value = 'Минск'
+        getWeather('Минск');
+    }
+})
+
+inputCity.addEventListener('change', () => {
+    getWeather(inputCity.value);
+})
 
 
 
