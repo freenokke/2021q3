@@ -3,6 +3,10 @@
     const greetingTag = document.querySelector('.greeting')
     const inputName = document.querySelector('.name')
     const bodyElement = document.querySelector('body')
+    const sliderArrowLeft = document.querySelector('.slide-prev')
+    const sliderArrowRight = document.querySelector('.slide-next')
+    let randomNum = getRandomNum();
+    console.log("🚀 randomNum", randomNum)
 
 //**Фунция вывода времени/даты/приветствия**
 function showTimeDateGreeting() {
@@ -39,19 +43,58 @@ window.addEventListener('load', getLocalStorage)
 //**Вывод фоновых картинок в зависимости от времени суток**
 
     // установка рандомных изображений
-function setBg() {
-    const bgNum = new String(getRandomNum()).padStart(2, '0');
+function setBg(num) {
+    let bgNum = new String(randomNum).padStart(2, '0');
+    let bgSLiderNum = num ? new String(num).padStart(2, '0') : null; // для слайдера
     const timeOfDay = getTimeOfDay();
+    const img = new Image();
     if (timeOfDay == 'morning') {
-        bodyElement.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/morning/${bgNum}.jpg')`;
+        img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/morning/${num ? bgSLiderNum : bgNum}.jpg`;
+        img.onload = () => {
+            bodyElement.style.backgroundImage = `url(${img.src})`;
+            console.log(bodyElement.style.backgroundImage)
+        };
     } else if (timeOfDay == 'afternoon') {
-        bodyElement.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/afternoon/${bgNum}.jpg')`;
+        img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/afternoon/${num ? bgSLiderNum : bgNum}.jpg`;
+        img.onload = () => {
+            bodyElement.style.backgroundImage = `url(${img.src})`;
+            console.log(bodyElement.style.backgroundImage)
+        };
     } else if (timeOfDay == 'evening') {
-        bodyElement.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/${bgNum}.jpg')`;
+        img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/${num ? bgSLiderNum : bgNum}.jpg`;
+        img.onload = () => {
+            bodyElement.style.backgroundImage = `url(${img.src})`;
+            console.log(bodyElement.style.backgroundImage)
+        };
     } else if (timeOfDay == 'night') {
-        bodyElement.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/night/${bgNum}.jpg')`;
+        img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/night/${num ? bgSLiderNum : bgNum}.jpg`;
+        img.onload = () => {
+            bodyElement.style.backgroundImage = `url(${img.src})`;
+            console.log(bodyElement.style.backgroundImage)
+        };
+    }       
+}
+
+function getSlidePrev() {
+    let i = randomNum;
+    console.log("🚀 getSlidePrev ~ i", i, randomNum)
+    if (i > 1) {
+        randomNum -= 1;
+    } else {
+        randomNum = 20;
     }
-    
+    setBg(randomNum)
+}
+
+function getSlideNext() {
+    let i = randomNum;
+    console.log("🚀 getSlideNext ~ i", i, randomNum)
+    if (i < 20) {
+        randomNum += 1;
+    } else {
+        randomNum = 1;
+    }
+    setBg(randomNum)
 }
 
     //генерируем рандонмное число от 1 до 20 включительно
@@ -86,3 +129,5 @@ function getTimeOfDay() {
 
 showTimeDateGreeting();
 setBg();
+sliderArrowLeft.addEventListener('click', getSlidePrev)
+sliderArrowRight.addEventListener('click', getSlideNext)
