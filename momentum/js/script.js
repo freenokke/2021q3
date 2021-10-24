@@ -10,6 +10,9 @@
     const temperature = document.querySelector('.temperature');
     const weatherDescription = document.querySelector('.weather-description');
     const inputCity = document.querySelector('.city')
+    const quote = document.querySelector('.quote');
+    const author = document.querySelector('.author');
+    const changeQuoteBtn = document.querySelector('.change-quote');
 
 //**Фунция вывода времени/даты/приветствия**
 function showTimeDateGreeting() {
@@ -106,31 +109,43 @@ function getTimeOfDay() {
 //**Выводим данные о погоде через API
 async function getWeather(city) { 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&appid=0a8e313b2ad9cc6efaa2adc43baf9561&units=metric`;
-    console.log("🚀 ~ file: script.js ~ line 123 ~ getWeather ~ url", url)
     const res = await fetch(url);
-    const data = await res.json(); 
-    console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
-
+    const data = await res.json();
+    
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${data.main.temp}°C`;
     weatherDescription.textContent = data.weather[0].description;
 }
 
+//**Выводим цитаты из локального файла json
+async function getQuotes(num) { 
+    const url = '../assets/json/quotes.json';
+
+    const res = await fetch(url);
+    const data = await res.json(); 
+    console.log(data[num ? num : 0].text);
+
+    quote.textContent = data[num ? num : 0].text;
+    author.textContent = data[num ? num : 0].author;
+}
+
+
+
 // сохранение введенных данных в LocalStorage
 function setLocalStorage() {
     localStorage.setItem('name', inputName.value);
     localStorage.setItem('city', inputCity.value);
 }
-
 window.addEventListener('beforeunload', setLocalStorage)
-    // получение данных из LS при перезагрузке для inputName
+
+// получение данных из LS при перезагрузке для inputName
 window.addEventListener('load', () => {
     if(localStorage.getItem('name')) {
         inputName.value = localStorage.getItem('name');
     }
 })
-    // получение данных из LS при перезагрузке для inputCity
+// получение данных из LS при перезагрузке для inputCity
 window.addEventListener('load', () => {
     if(localStorage.getItem('city')) {
         inputCity.value = localStorage.getItem('city');
@@ -140,10 +155,12 @@ window.addEventListener('load', () => {
         getWeather('Минск');
     }
 })
-
-inputCity.addEventListener('change', () => {
-    getWeather(inputCity.value);
+// обновление цитаты при перезагрузке страницы
+window.addEventListener('load', () => {
+    const randomNum = getRandomNum(0, 8);
+    getQuotes(randomNum);
 })
+
 
 
 
@@ -152,3 +169,10 @@ showTimeDateGreeting();
 setBg();
 sliderArrowLeft.addEventListener('click', getSlidePrev)
 sliderArrowRight.addEventListener('click', getSlideNext)
+inputCity.addEventListener('change', () => {
+    getWeather(inputCity.value);
+})
+changeQuoteBtn.addEventListener('click', () => {
+    const randomNum = getRandomNum(0, 8);
+    getQuotes(randomNum);
+})
