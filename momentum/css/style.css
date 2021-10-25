@@ -51,9 +51,15 @@ body {
   opacity: .8;
   cursor: pointer;
   transition: .3s;
+  border-radius: 5px;
 }
 
 .play-item:hover {
+  opacity: 1;
+}
+
+.play-item.active {
+  background-color: rgba(0, 204, 255, 0.432);
   opacity: 1;
 }
 

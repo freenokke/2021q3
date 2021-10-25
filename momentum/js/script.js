@@ -6,7 +6,7 @@ import playList from './playList.js';
     const inputName = document.querySelector('.name')
     const bodyElement = document.querySelector('body')
     const sliderArrowLeft = document.querySelector('.slide-prev')
-    const sliderArrowRight = document.querySelector('.slide-next')
+    const sliderArrowRight = document.querySelector('.slide-next');
 
     let randomNum = getRandomNum();
 
@@ -25,6 +25,9 @@ import playList from './playList.js';
     const audioNextBtn = document.querySelector('.play-next')
     let playNum = 0;
     let isPlay = false;
+    let isEnded = audio.ended;
+    console.log("🚀 ~ file: script.js ~ line 29 ~ isEnded", isEnded)
+    const playListContainer = document.querySelector('.play-list');
 
 //**Фунция вывода времени/даты/приветствия**
 function showTimeDateGreeting() {
@@ -141,8 +144,57 @@ async function getQuotes(num) {
     author.textContent = data[num ? num : 0].author;
 }
 
+//** Аудиоплеер */
+// ф-ция запуска аудио
+function playAudio() {
+    if (!isPlay) {
+        audio.src = playList[playNum].src;
+        audio.play();
+        audioPlayBtn.classList.remove('play');
+        audioPlayBtn.classList.add('pause');
+        isPlay = true;
+    } else {
+        audio.pause();
+        audioPlayBtn.classList.remove('pause');
+        audioPlayBtn.classList.add('play');
+        isPlay = false;
+    }
+    // audio.currentTime = 0;
+}
 
+// ф-ция перелистывания треков
+function playNext() {
+    if (playNum > playList.length - 2) {
+        playNum = 0;
+    } else {
+        playNum ++;
+    }
+    audio.src = playList[playNum].src;
+    audio.play();
+    audioPlayBtn.classList.remove('play');
+    audioPlayBtn.classList.add('pause');
+    isPlay = true;
+}
 
+function playPrev() {
+    if (playNum < 1) {
+        playNum = 4;
+    }
+    playNum--;
+    audio.src = playList[playNum].src;
+    audio.play();
+    audioPlayBtn.classList.remove('play');
+    audioPlayBtn.classList.add('pause');
+    isPlay = true;
+}
+
+// Вывод названия треков
+playList.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.classList.add('play-item');
+    li.textContent = item.title;
+    playListContainer.append(li);
+})
 
 
 // сохранение введенных данных в LocalStorage
@@ -173,53 +225,6 @@ window.addEventListener('load', () => {
     const randomNum = getRandomNum(0, 8);
     getQuotes(randomNum);
 })
-// ф-ция запуска аудио
-function playAudio() {
-    if (!isPlay) {
-        audio.src = playList[playNum].src;
-        audio.play();
-        audioPlayBtn.classList.remove('play');
-        audioPlayBtn.classList.add('pause');
-        isPlay = true;
-    } else {
-        audio.pause();
-        audioPlayBtn.classList.remove('pause');
-        audioPlayBtn.classList.add('play');
-        isPlay = false;
-    }
-    // audio.currentTime = 0;
-}
-
-// ф-ция перелистывания треков
-function playNext() {
-    if (playNum > playList.length - 1) {
-        playNum = 0;
-    } else {
-        playNum++;
-    }
-    audio.src = playList[playNum].src;
-    audio.play();
-    audioPlayBtn.classList.remove('play');
-    audioPlayBtn.classList.add('pause');
-    isPlay = true;
-    console.log(audio.src)
-    console.log(playNum)
-}
-
-function playPrev() {
-    if (playNum < 1) {
-        playNum = 4;
-    }
-    playNum--;
-    audio.src = playList[playNum].src;
-    audio.play();
-    audioPlayBtn.classList.remove('play');
-    audioPlayBtn.classList.add('pause');
-    isPlay = true;
-    console.log(audio.src)
-}
-
-
 
 showTimeDateGreeting();
 setBg();
@@ -233,7 +238,22 @@ changeQuoteBtn.addEventListener('click', () => {
     getQuotes(randomNum);
 })
 
+// обработчики событий по кликам на кнопки управления
 audioPlayBtn.addEventListener('click', playAudio);
 audioNextBtn.addEventListener('click', playNext);
 audioPrevBtn.addEventListener('click', playPrev);
+
+// подсвечивание текущего проигрываемого трека
+const list = document.querySelectorAll('.play-item');
+
+audio.addEventListener('play', () => {
+    list.forEach((item, index) => {
+        item.classList.remove('active');
+    })
+    list[playNum].classList.add('active');
+});
+// запуск следующего трека после окончания текущего
+audio.addEventListener('ended', playNext);
+
+
 
