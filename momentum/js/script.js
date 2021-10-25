@@ -1,3 +1,5 @@
+import playList from './playList.js';
+
     const time = document.querySelector('.time');
     const dateTag = document.querySelector('.date');
     const greetingTag = document.querySelector('.greeting')
@@ -5,14 +7,24 @@
     const bodyElement = document.querySelector('body')
     const sliderArrowLeft = document.querySelector('.slide-prev')
     const sliderArrowRight = document.querySelector('.slide-next')
+
     let randomNum = getRandomNum();
+
     const weatherIcon = document.querySelector('.weather-icon');
     const temperature = document.querySelector('.temperature');
     const weatherDescription = document.querySelector('.weather-description');
     const inputCity = document.querySelector('.city')
+
     const quote = document.querySelector('.quote');
     const author = document.querySelector('.author');
     const changeQuoteBtn = document.querySelector('.change-quote');
+
+    const audio = document.querySelector('audio');
+    const audioPlayBtn = document.querySelector('.play');
+    const audioPrevBtn = document.querySelector('.play-prev')
+    const audioNextBtn = document.querySelector('.play-next')
+    let playNum = 0;
+    let isPlay = false;
 
 //**Фунция вывода времени/даты/приветствия**
 function showTimeDateGreeting() {
@@ -124,11 +136,12 @@ async function getQuotes(num) {
 
     const res = await fetch(url);
     const data = await res.json(); 
-    console.log(data[num ? num : 0].text);
 
     quote.textContent = data[num ? num : 0].text;
     author.textContent = data[num ? num : 0].author;
 }
+
+
 
 
 
@@ -160,8 +173,51 @@ window.addEventListener('load', () => {
     const randomNum = getRandomNum(0, 8);
     getQuotes(randomNum);
 })
+// ф-ция запуска аудио
+function playAudio() {
+    if (!isPlay) {
+        audio.src = playList[playNum].src;
+        audio.play();
+        audioPlayBtn.classList.remove('play');
+        audioPlayBtn.classList.add('pause');
+        isPlay = true;
+    } else {
+        audio.pause();
+        audioPlayBtn.classList.remove('pause');
+        audioPlayBtn.classList.add('play');
+        isPlay = false;
+    }
+    // audio.currentTime = 0;
+}
 
+// ф-ция перелистывания треков
+function playNext() {
+    if (playNum > playList.length - 1) {
+        playNum = 0;
+    } else {
+        playNum++;
+    }
+    audio.src = playList[playNum].src;
+    audio.play();
+    audioPlayBtn.classList.remove('play');
+    audioPlayBtn.classList.add('pause');
+    isPlay = true;
+    console.log(audio.src)
+    console.log(playNum)
+}
 
+function playPrev() {
+    if (playNum < 1) {
+        playNum = 4;
+    }
+    playNum--;
+    audio.src = playList[playNum].src;
+    audio.play();
+    audioPlayBtn.classList.remove('play');
+    audioPlayBtn.classList.add('pause');
+    isPlay = true;
+    console.log(audio.src)
+}
 
 
 
@@ -176,3 +232,8 @@ changeQuoteBtn.addEventListener('click', () => {
     const randomNum = getRandomNum(0, 8);
     getQuotes(randomNum);
 })
+
+audioPlayBtn.addEventListener('click', playAudio);
+audioNextBtn.addEventListener('click', playNext);
+audioPrevBtn.addEventListener('click', playPrev);
+
