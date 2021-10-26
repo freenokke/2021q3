@@ -12,6 +12,8 @@ import playList from './playList.js';
 
     const weatherIcon = document.querySelector('.weather-icon');
     const temperature = document.querySelector('.temperature');
+    const wind = document.querySelector('.wind');
+    const humidity = document.querySelector('.humidity');
     const weatherDescription = document.querySelector('.weather-description');
     const inputCity = document.querySelector('.city')
 
@@ -129,8 +131,10 @@ async function getWeather(city) {
     
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-    temperature.textContent = `${data.main.temp}°C`;
+    temperature.textContent = `Температура: ${Math.trunc(data.main.temp)}°C`;
     weatherDescription.textContent = data.weather[0].description;
+    wind.textContent = `Ветер: ${Math.trunc(data.wind.speed)} м/с`;
+    humidity.textContent = `Влажность: ${Math.trunc(data.main.humidity)}%`
 }
 
 //**Выводим цитаты из локального файла json
