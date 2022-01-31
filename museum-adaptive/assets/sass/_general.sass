@@ -1,0 +1,82 @@
+// font-family: 'Roboto', sans-serif
+// font-family: 'Forum', cursive
+/* Обнуление */
+*,
+*::before,
+*::after 
+	padding: 0
+	margin: 0
+	border: 0
+	box-sizing: border-box
+html
+    scroll-behavior: smooth
+a 
+	text-decoration: none
+ul,
+ol,
+li 
+	list-style: none
+
+img 
+	vertical-align: top
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 
+	font-weight: inherit
+	font-size: inherit
+
+html,
+body 
+	height: 100%
+	line-height: 1
+    
+body._lock 
+    overflow: hidden
+
+// body 
+//     min-width: 1920px
+
+.container
+    max-width: 1440px
+    margin: 0 auto
+    @media screen and (max-width: 1440px) 
+        padding-left: 20px !important
+        padding-right: 20px !important
+
+.section-title
+    font-family: 'Forum', cursive
+    font-weight: 400
+    font-size: 80px
+    line-height: 90px
+    letter-spacing: 5px
+    text-transform: uppercase
+    @media screen and (max-width: 421px) 
+        font-size: 28px
+        line-height: 40px
+
+.underline-title 
+    position: relative
+
+.underline-title::after 
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    height: 3px
+    background-color: #710707
+
+.underline
+    position: relative
+
+.underline::after 
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    top: 187px
+    height: 3px
+    background-color: #666666

@@ -1,0 +1,368 @@
+#video
+    color: #000
+    font-family: 'Roboto', sans-serif
+    padding: 75px 0px 75px
+    .container
+        display: flex
+        flex-direction: column
+        align-items: center
+    @media screen and (max-width: 1025px) 
+        padding-top: 60px
+        padding-bottom: 63px
+    @media screen and (max-width: 769px) 
+        padding-top: 39px
+        padding-bottom: 40px
+.video
+    &-content
+        @media screen and (max-width: 1440px)  
+            width: 100%   
+    &-content__toolbar
+        margin-bottom: 43px
+        height: 85px
+        background: #000000
+        display: flex
+        align-items: center
+        padding-top: 5px
+        button
+            cursor: pointer
+            &:hover
+                filter: invert(71%) sepia(0%) saturate(1057%) hue-rotate(236deg) brightness(84%) contrast(101%)
+            &:nth-child(1)
+                height: 31px
+                width: 23px
+                margin-right: 50px
+                margin-left: 30px
+                background-image: url('./assets/img/video/toolbar-icon-play.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                background-color: transparent
+                @media screen and (max-width: 1440px)  
+                    background-size: contain
+                    margin-right: 3.47%
+                    width: 23px
+                    height: 30px
+                    // margin-left: 2.1%
+                @media screen and (max-width: 1025px)
+                    margin-left: 40px 
+                    margin-right: 30px
+                @media screen and (max-width: 990px)
+                    margin: 0
+                    order: 1
+                @media screen and (max-width: 769px)  
+                    margin-left: 30px 
+                    margin-right: 0
+                @media screen and (max-width: 760px)  
+                    margin: 0
+                    flex-shrink: 0
+                @media screen and (max-width: 500px)  
+                    width: 13px
+                    height: 17.5px
+            &:nth-child(3)
+                height: 31px
+                width: 38px
+                margin-right: 50px
+                margin-left: 50px
+                background-image: url('./assets/img/video/toolbar-icon-volume.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                background-color: transparent
+                @media screen and (max-width: 1440px)  
+                    background-size: contain 
+                    margin-right: 3.47%
+                    margin-left: 3.47%
+                    width: 26px
+                    height: 20px
+                @media screen and (max-width: 1025px)  
+                    margin-right: 31px
+                    margin-left: 31px
+                @media screen and (max-width: 990px)  
+                    order: 2
+                    margin: 0
+                @media screen and (max-width: 769px)  
+                    margin-right: 35px
+                    margin-left: 35px
+                @media screen and (max-width: 760px)  
+                    margin: 0
+                    flex-shrink: 0
+                @media screen and (max-width: 500px)  
+                    width: 18px
+                    height: 14px
+            &:nth-child(5)
+                width: 35px
+                height: 35px
+                margin-left: 50px
+                background-image: url('./assets/img/video/toolbar-icon-fullscreen.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                background-color: transparent
+                @media screen and (max-width: 1440px)  
+                    background-size: contain 
+                    width: 27px
+                    height: 27px
+                    margin-left: 3.47% 
+                @media screen and (max-width: 1025px)  
+                    margin-left: 28px
+                @media screen and (max-width: 990px)  
+                    order: 4
+                    margin: 0
+                @media screen and (max-width: 769px)  
+                    margin-left: 40px
+                @media screen and (max-width: 760px)  
+                    margin: 0
+                    flex-shrink: 0
+                @media screen and (max-width: 500px)  
+                    width: 18px
+                    height: 18px
+        @media screen and (max-width: 1025px)  
+            height: 60px  
+            margin-bottom: 47px             
+        @media screen and (max-width: 990px)  
+            justify-content: space-around
+        @media screen and (max-width: 769px)
+            justify-content: normal 
+            margin-bottom: 26px 
+            height: 53px                        
+        @media screen and (max-width: 760px)
+            justify-content: space-around                    
+        @media screen and (max-width: 421px)
+            margin-bottom: 45px                   
+    &-content__video-image
+        display: block
+        position: relative
+        height: 650px
+        @media screen and (max-width: 1440px)  
+            width: 100% 
+            height: auto
+        @media screen and (max-width: 1025px)  
+            height: 444px
+        @media screen and (max-width: 1000px)  
+            height: auto
+        @media screen and (max-width: 769px)  
+            height: 329px
+        @media screen and (max-width: 750px)  
+            height: auto
+        img
+            height: 100%
+            width: 100%
+        // &::after 
+        //     content: ""
+        //     height: 220px
+        //     width: 220px
+        //     position: absolute
+        //     left: 50%
+        //     transform: translate(-50%, -50%)
+        //     top: 50%
+        //     background-image: url('./assets/img/video/play_icon.svg')
+        // &:hover::after
+        //         filter: invert(59%) sepia(16%) saturate(729%) hue-rotate(356deg) brightness(89%) contrast(86%)
+        .main_play_button
+            position: absolute
+            height: 220px
+            width: 220px
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            background-image: url('./assets/img/video/play_icon.svg')
+            background-color: transparent
+            cursor: pointer
+            transition: 0.2s all
+            &:hover
+                filter: invert(55%) sepia(21%) saturate(573%) hue-rotate(356deg) brightness(95%) contrast(85%) opacity(85%)
+            @media screen and (max-width: 1025px)
+                height: 152px
+                width: 152px
+                background-size: contain
+            @media screen and (max-width: 990px)
+                height: 80px
+                width: 80px
+                background-size: contain
+            @media screen and (max-width: 500px)
+                height: 50px
+                width: 50px
+                background-size: contain
+    &-textcontent
+        display: flex
+        column-gap: 114px
+        margin-bottom: 75px
+        @media screen and (max-width: 1025px)
+            justify-content: flex-start
+            width: 100%
+            margin-bottom: 40px
+        @media screen and (max-width: 769px)
+            margin-bottom: 20px
+        &__description
+            max-width: 720px
+            font-weight: 300
+            font-size: 22px
+            line-height: 38px
+            padding-top: 10px
+            @media screen and (max-width: 1025px)  
+                display: none
+        &__title
+            max-width: 606px
+            color: #9D8665
+            @media screen and (max-width: 1025px)  
+                font-size: 50px
+                line-height: 75px
+            @media screen and (max-width: 769px)  
+                font-size: 40px
+                line-height: 60px
+            @media screen and (max-width: 421px) 
+                font-size: 28px
+                line-height: 40px
+                
+            
+    &-content__video-playlist
+        display: flex
+        justify-content: space-between
+        margin-bottom: 40px
+        video
+            max-width: 452px 
+        iframe
+            @media screen and (max-width: 1400px) 
+                max-width: 400px  
+                max-height: 220px  
+            @media screen and (max-width: 1100px) 
+                max-width: 300px
+                max-height: 163px  
+            @media screen and (max-width: 990px) 
+                &:nth-child(3)
+                    display: none
+                max-width: 354px
+                max-height: 199px 
+            @media screen and (max-width: 750px)
+                &:nth-child(3)
+                    display: block 
+                max-width: 190px
+                max-height: 101px 
+            @media screen and (max-width: 615px)
+                &:nth-child(3)
+                    display: none
+                max-width: 250px
+                max-height: 101px 
+            @media screen and (max-width: 615px)
+                &:nth-child(3)
+                    display: none
+                max-width: 250px
+                max-height: 101px 
+            @media screen and (max-width: 540px)
+                max-width: 180px
+                max-height: 101px 
+            @media screen and (max-width: 400px)
+                &:nth-child(2)
+                    display: none
+                max-width: 100%
+                max-height: 180px 
+        @media screen and (max-width: 769px) 
+            margin-bottom: 18px        
+        @media screen and (max-width: 421px) 
+            margin-bottom: 40px        
+    &-content__playlist-pagination
+        display: flex
+        justify-content: center
+        button
+            margin-right: 20px
+            cursor: pointer
+            &:last-child
+                margin-right: 0  
+            &:nth-child(2)
+                background-color: #333333
+            @media screen and (max-width: 769px) 
+                margin-right: 18px  
+            @media screen and (max-width: 421px) 
+                margin-right: 20px  
+        @media screen and (max-width: 769px)
+            margin-bottom: 40px                 
+        @media screen and (max-width: 421px)
+            margin-bottom: 0            
+        .playlist-pagination
+            &__item
+                display: inline-block
+                background-color: #999999
+                height: 12px
+                width: 12px
+                border-radius: 50px
+                &:hover
+                    background-color: #710707
+                @media screen and (max-width: 421px)
+                    width: 8px
+                    height: 8px
+            &__symbol
+                &:hover
+                    filter: invert(8%) sepia(43%) saturate(7466%) hue-rotate(352deg) brightness(96%) contrast(104%)
+        .previous
+            width: 10px
+            height: 12px
+            // margin-left: 50px
+            background-image: url('./assets/img/video/playlist_prev.svg')
+            background-repeat: no-repeat
+            background-position: center center
+            background-color: transparent 
+            @media screen and (max-width: 421px)
+                width: 7px
+                height: 8px     
+        .next
+            width: 10px
+            height: 12px
+            // margin-left: 50px
+            background-image: url('./assets/img/video/playlist_next.svg')
+            background-repeat: no-repeat
+            background-position: center center
+            background-color: transparent  
+            @media screen and (max-width: 421px)
+                width: 7px
+                height: 8px 
+.progress 
+    background: linear-gradient(to right, #710707 0%, #710707 54%, #C4C4C4 40%, #C4C4C4 100%)
+    border: none
+    height: 8px
+    outline: none
+    transition: background 450ms ease-in
+    -webkit-appearance: none
+    width: 929px
+    @media screen and (max-width: 1440px)   
+        max-width: 64.51%
+        height: 6px
+    @media screen and (max-width: 1025px)   
+        max-width: 571px
+    @media screen and (max-width: 990px)  
+        order: 3
+        max-width: 485px
+        height: 5px
+    @media screen and (max-width: 670px)  
+        max-width: 300px
+    @media screen and (max-width: 421px)  
+        max-width: 200px
+
+.progress::-webkit-slider-thumb 
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    -webkit-appearance: none
+    cursor: ew-resize
+    background: #fff
+
+.progress-volume
+    background: linear-gradient(to right, #710707 0%, #710707 42%, #C4C4C4 40%, #C4C4C4 100%)
+    border: none
+    height: 8px
+    width: 155px   
+    outline: none
+    transition: background 450ms ease-in
+    -webkit-appearance: none
+    @media screen and (max-width: 1440px)  
+        width: 10.76%
+        height: 6px
+    @media screen and (max-width: 1025px)   
+        width: 143px
+    @media screen and (max-width: 990px)  
+        display: none
+
+.progress-volume::-webkit-slider-thumb 
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    -webkit-appearance: none
+    cursor: ew-resize
+    background: #fff
+

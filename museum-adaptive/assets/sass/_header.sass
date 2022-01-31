@@ -1,0 +1,197 @@
+header 
+    background: #030303
+    color: #FFFFFF
+    font-family: 'Roboto', sans-serif
+    z-index: 99
+
+.header
+    &-container
+        padding: 59px 0px 58px 0px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        @media screen and (max-width: 1025px)
+            padding: 41px 0px 41px 0px
+        @media screen and (max-width: 769px)
+            padding: 35px 0px 34px 0px
+
+        
+    &-logo
+        background-image: url('./assets/svg/logo.svg')
+        background-repeat: no-repeat
+        background-position: center center
+        width: 199px
+        height: 33px
+        @media screen and (max-width: 1025px)
+            height: 48px
+        @media screen and (max-width: 769px)
+            height: 41px
+        @media screen and (max-width: 421px)
+            width: 131px
+            height: 20px
+            background-image: url('./assets/svg/logo_420px.svg')
+    &-menu
+        max-width: 775px
+        @media screen and (max-width: 1025px)
+            display: none
+    &-menu__list
+        display: flex
+        // padding-left: 5px
+        @media screen and (max-width: 1025px)
+            flex-direction: column
+        @media screen and (max-width: 769px)
+            max-width: 122px
+        a
+            color: #FFFFFF
+            font-weight: 100
+            font-size: 22px
+            line-height: 26px
+            letter-spacing: 2px
+            transition: 0.2s all
+            &:visited
+                color: #FFFFFF
+            &:hover
+                color: #9D8665
+            &:active
+                color: #9D8665
+    &-menu__item
+        margin-right: 56px
+        &:last-child
+            margin-right: 0px
+        @media screen and (max-width: 1025px)
+            margin-right: 0
+            margin-bottom: 25px
+            position: relative
+        @media screen and (max-width: 769px)
+            &:last-child
+                margin-bottom: 35px
+            &::after
+                content: ""
+                position: absolute
+                width: 12px
+                height: 12px
+                background-image: url('./assets/img/welcome/Group.svg')
+                right: 0
+                top: 50%
+                transform: translate(0, -50%)
+                background-position: center
+                background-repeat: no-repeat
+    //for < 768px
+    &-menu__social
+        display: none
+        @media screen and (max-width: 769px) 
+            display: block
+            margin: 0
+            align-self: center
+            .footer-social_links
+                margin: 70px 0 0 0
+                transform: none 
+    //for < 768px
+    &-menu__image-block
+        display: none
+        @media screen and (max-width: 769px)           
+            display: flex
+            flex-wrap: wrap
+            row-gap: 20px
+            column-gap: 20px
+            img
+                &:first-child
+                    flex-basis: 100%
+                    max-width: 100%
+                    height: 194px
+                    object-fit: cover
+                &:nth-child(2),:nth-child(3)
+                    max-width: 319px
+                    height: 161px
+        @media screen and (max-width: 421px)           
+            gap: 10px
+            img
+                object-fit: cover
+                &:first-child
+                    max-width: 95px
+                    height: 95px
+                    object-fit: cover
+                &:nth-child(2),&:nth-child(3)
+                    max-width: 95px
+                    height: 95px    
+.menu
+    display: none
+.menu__icon 
+	display: none
+
+
+@media screen and (max-width: 1025px)
+    .menu__icon 
+        z-index: 5
+        display: block
+        position: relative
+        // top: 10%
+        // left: 10%
+        right: 5px
+        width: 25px
+        height: 18px
+        cursor: pointer
+
+    .menu__icon span,
+    .menu__icon::before,
+    .menu__icon::after 
+        left: 0
+        position: absolute
+        height: 10%
+        width: 100%
+        transition: all 0.3s ease 0s
+        background-color: #fff
+
+    .menu__icon::before,
+    .menu__icon::after 
+        content: ""
+
+    .menu__icon::before 
+        top: 0
+
+    .menu__icon::after 
+        bottom: 0
+
+    .menu__icon span 
+        top: 50%
+        transform: scale(1) translate(0px, -50%)
+
+    .menu__icon._active span 
+        transform: scale(0) translate(0px, -50%)
+
+    .menu__icon._active::before 
+        top: 50%
+        transform: rotate(-45deg) translate(0px, -50%)
+
+    .menu__icon._active::after 
+        bottom: 50%
+        transform: rotate(45deg) translate(0px, 50%)
+
+
+    .menu__body 
+        position: fixed
+        top: 128px
+        left: -100%
+        width: 297px
+        height: 100%
+        background-color: #030303
+        padding: 35px 120px 287px 55px
+        transition: left 0.3s ease 0s
+        overflow: hidden
+        display: flex
+        justify-content: center
+        z-index: 95
+        flex-direction: column
+        justify-content: flex-start
+        @media screen and (max-width: 769px)
+            top: 110px
+            width: 100%
+            position: absolute
+            overflow: scroll
+            padding-right: 55px
+        @media screen and (max-width: 421px)
+            top: 90px
+    .menu__body._active 
+        left: 0
+
+

@@ -1,0 +1,194 @@
+.footer
+    background: #030303
+    font-family: 'Roboto', sans-serif
+    color: #fff
+    padding: 75px 0 50px 0
+    @media screen and (max-width: 1025px) 
+        padding-top: 58px
+    @media screen and (max-width: 769px) 
+        padding-top: 40px
+    .underline
+        &::after
+            @media screen and (max-width: 769px)
+                top: 260px
+    .container
+        display: flex
+        flex-direction: column
+    .upper
+        display: flex
+        align-items: flex-start 
+        margin-bottom: 90px
+        @media screen and (max-width: 1440px) 
+            justify-content: space-between
+        @media screen and (max-width: 850px) 
+            flex-wrap: wrap
+        @media screen and (max-width: 769px) 
+            justify-content: normal
+            margin-bottom: 80px
+        @media screen and (max-width: 690px) 
+            justify-content: space-between
+            
+    .lower
+        ul
+            display: flex
+            justify-content: space-between
+            align-items: center
+            li
+                font-style: normal
+                font-weight: 200
+                font-size: 22px
+                line-height: 22px
+                letter-spacing: 2px
+                @media screen and (max-width: 421px) 
+                    font-size: 16px
+                    line-height: 22px
+                a
+                    @media screen and (max-width: 421px) 
+                        font-size: 16px
+                        line-height: 22px
+    &-link
+        font-style: normal
+        font-weight: 200
+        font-size: 22px
+        line-height: 22px
+        letter-spacing: 2px
+        color: #fff
+        transition: 0.2s color
+        &:hover
+            color: #9D8665
+        &.shcool
+            @media screen and (max-width: 550px) 
+                display: none
+    &-logo
+        background-image: url('./assets/svg/logo.svg')
+        background-repeat: no-repeat
+        background-position: center center
+        width: 195px
+        height: 50px
+        margin-right: 145px
+        @media screen and (max-width: 1440px) 
+            margin-right: 0
+        @media screen and (max-width: 1025px) 
+            margin-right: -67px
+        @media screen and (max-width: 1000px) 
+            margin-right: 0
+        @media screen and (max-width: 769px) 
+            height: 41px
+            margin-left: 1px
+        @media screen and (max-width: 421px) 
+            background-image: url('./assets/svg/logo_420px.svg')
+        @media screen and (max-width: 421px) 
+            flex-basis: 100%
+            justify-self: flex-start
+    &-nav_1
+        margin-right: 172px
+        font-weight: 100
+        font-size: 22px
+        line-height: 50px
+        letter-spacing: 2px
+        padding-top: 3px
+        @media screen and (max-width: 1440px) 
+            margin-right: 10px
+        @media screen and (max-width: 769px) 
+            margin-left: 100px
+            margin-right: 185px
+            line-height: 45px
+            letter-spacing: 0px
+        @media screen and (max-width: 690px) 
+            margin-left: 0
+            margin-right: 0
+        @media screen and (max-width: 421px) 
+            font-size: 16px
+            line-height: 30px
+        a
+            color: #fff
+            transition: 0.2s color
+            &:hover
+                color: #9D8665
+    &-nav_2
+        margin-right: 405px
+        font-weight: 100
+        font-size: 22px
+        line-height: 50px
+        letter-spacing: 2px
+        padding-top: 3px
+        @media screen and (max-width: 1440px) 
+            margin-right: 0
+        @media screen and (max-width: 769px) 
+            line-height: 45px
+            letter-spacing: 0px
+        @media screen and (max-width: 421px) 
+            font-size: 16px
+            line-height: 30px
+        a 
+            color: #fff
+            transition: 0.2s color
+            &:hover
+                color: #9D8665
+    &-social_links
+        align-self: flex-end
+        @media screen and (max-width: 769px) 
+            margin-left: 299px
+            margin-top: 38px
+        @media screen and (max-width: 690px)
+            margin-left: 50%
+            transform: translate(-50%,0)
+
+        &__list
+            display: flex
+            margin-bottom: 18px
+            @media screen and (max-width: 1025px) 
+                margin-bottom: 10px
+            @media screen and (max-width: 769px) 
+                margin: 0
+        &__item
+            width: 48px
+            height: 48px
+            border: 1px solid #666666
+            box-sizing: border-box
+            filter: drop-shadow(0px 0px 0px #666666)
+            border-radius: 50px
+            margin-right: 24px
+            @media screen and (max-width: 421px)
+                margin-right: 5px 
+            &:last-child
+                margin-right: 0
+            .social-link
+                width: 100%
+                height: 100%
+                display: block
+                transition: 0.2s border-color
+                transition: 0.5s transform
+                &:hover
+                    transform: rotate(360deg)
+                    border-color: #9D8665                  
+            .youtube
+                background-image: url('./assets/img/footer/youtube.svg')
+                background-repeat: no-repeat
+                background-position: center center               
+                &:hover
+                    background-image: url('./assets/img/footer/youtube_gold.svg')
+            .instagram
+                background-image: url('./assets/img/footer/instagram.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                &:hover
+                    background-image: url('./assets/img/footer/instagram_gold.svg')
+            a.facebook
+                background-image: url('./assets/img/footer/facebook.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                &:hover
+                    background-image: url('./assets/img/footer/facebook_gold.svg')
+            .twitter
+                background-image: url('./assets/img/footer/twitter.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                &:hover
+                    background-image: url('./assets/img/footer/twitter_gold.svg')
+            .pinterest
+                background-image: url('./assets/img/footer/Pinterest.svg')
+                background-repeat: no-repeat
+                background-position: center center
+                &:hover
+                    background-image: url('./assets/img/footer/Pinterest_gold.svg')
