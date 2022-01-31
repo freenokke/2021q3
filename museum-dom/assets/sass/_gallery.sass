@@ -1,0 +1,82 @@
+#gallery
+    color: #fff
+    font-family: 'Roboto', sans-serif
+    background-color: #030303
+    padding-top: 75px
+    @media screen and (max-width: 1025px) 
+        padding-top: 60px
+    @media screen and (max-width: 769px) 
+        padding-top: 40px
+    .gallery
+        &__title
+            margin-bottom: 75px
+            @media screen and (max-width: 1025px)  
+                font-size: 50px
+                line-height: 75px
+                margin-bottom: 60px
+            @media screen and (max-width: 769px)  
+                font-size: 40px
+                line-height: 60px
+                margin-bottom: 40px
+            @media screen and (max-width: 421px) 
+                font-size: 28px
+                line-height: 40px
+        &__img
+            transform: translateY(30%)
+            opacity: 0
+            display: inline-block
+            margin-bottom: 24px
+            transition: all 1s
+            &:nth-child(1), &:nth-child(11)              
+                margin-top: 50px
+            @media screen and (max-width: 1440px)
+                max-width: 100%
+            @media screen and (max-width: 1025px)
+                max-height: 380px
+                max-width: 304px
+                // &:nth-child(12) 
+                //     margin-top: 50px
+                // &:nth-child(12) 
+                //     margin-top: 0                
+            @media screen and (max-width: 1000px)
+                max-width: 100%
+            @media screen and (max-width: 769px)
+                width: 352p
+            &.active
+                opacity: 1
+                transform: translateY(0%)
+    .picture-container
+        max-height: 2126px
+        overflow-y: hidden
+        position: relative
+        overflow-x: hidden
+        &::after
+            position: absolute
+            content: ''
+            display: block
+            height: 360px
+            bottom: 0
+            left: 0
+            right: 0
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)
+        &-inner
+            columns: 3 456px
+            column-gap: 36px
+            max-height: 2970px
+            @media screen and (max-width: 1440px)
+                columns: 3 304px
+                column-gap: 28px
+            @media screen and (max-width: 1010px)
+                columns: 3 auto
+                column-gap: 28px
+            @media screen and (max-width: 769px)
+                columns: 2
+                column-gap: 24px
+        @media screen and (max-width: 1025px)
+            max-height: 1400px        
+        @media screen and (max-width: 769px)
+            max-height: 1180px        
+        @media screen and (max-width: 421px)
+            max-height: 717px        
+                
+                

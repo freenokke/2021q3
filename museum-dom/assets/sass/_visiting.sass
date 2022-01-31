@@ -1,0 +1,132 @@
+#visiting
+    font-family: 'Roboto', sans-serif
+    height: 1265px
+    .container
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: column
+        padding: 75px 0
+        @media screen and (max-width: 1025px)
+            padding: 60px 0
+        @media screen and (max-width: 769px)
+            padding-top: 36px
+            padding-bottom: 80px
+        @media screen and (max-width: 421px)
+            padding-top: 39px
+            padding-bottom: 40px
+    @media screen and (max-width: 1450px)
+        height: max-content
+        .underline-title.main
+            @media screen and (max-width: 1025px)
+                margin-bottom: 63px
+            @media screen and (max-width: 769px)
+                margin-bottom: 41px
+.visiting
+    &-title
+        color: #9D8665
+        margin-bottom: 25px
+        @media screen and (max-width: 1025px)  
+            font-size: 50px
+            line-height: 75px
+            margin-bottom: 20px
+        @media screen and (max-width: 769px)  
+            font-size: 40px
+            line-height: 60px
+            margin-bottom: 23px
+        @media screen and (max-width: 421px) 
+            font-size: 28px
+            line-height: 40px
+    &-cardslist
+        display: flex
+        flex-wrap: wrap
+        row-gap: 78px
+        column-gap: 60px
+        @media screen and (max-width: 1450px)
+            justify-content: space-around
+        @media screen and (max-width: 1025px)
+            justify-content: center
+            column-gap: 108px
+            row-gap: 62px
+        @media screen and (max-width: 769px)
+            column-gap: 59px
+            row-gap: 41px
+        @media screen and (max-width: 421px)
+            column-gap: 59px
+            row-gap: 39px
+    &-card
+        display: block
+        max-width: 440px
+        width: 100%
+        transition: all 0.3s
+        // &:hover
+        //     transform: scale(1.03)
+        &:hover .underline-title
+            width: 100% !important
+        @media screen and (max-width: 1450px)
+            max-width: 330px  
+        @media screen and (max-width: 810px) 
+            max-width: 280px           
+        &__img
+            width: 100%
+            object-fit: contain
+            margin-bottom: 25px
+        &__title
+            font-family: 'Forum', cursive
+            font-weight: 400
+            font-size: 32px
+            line-height: 35px
+            letter-spacing: 5px
+            text-transform: uppercase
+            color: #000
+            margin-bottom: 9px
+            @media screen and (max-width: 1025px)
+                font-size: 28px
+                line-height: 31px
+                letter-spacing: 3px
+            @media screen and (max-width: 769px)
+                font-size: 22px
+                line-height: 24px
+                letter-spacing: 3px
+            @media screen and (max-width: 421px)
+                font-size: 18px
+                line-height: 20px
+                letter-spacing: 5px
+        &__text
+            color: #000
+            font-weight: 100
+            font-size: 22px
+            line-height: 26px
+            margin-bottom: 10px
+            @media screen and (max-width: 1025px)
+                font-size: 20px
+                line-height: 23px
+                margin-bottom: 12px
+            @media screen and (max-width: 769px)
+                font-size: 18px
+                line-height: 21px
+            @media screen and (max-width: 421px)
+                font-size: 16px
+                line-height: 19px
+        &__description
+            font-weight: 100
+            font-size: 18px
+            line-height: 21px
+            color: #000
+            @media screen and (max-width: 1025px)
+                font-size: 16px
+                line-height: 19px
+        .underline-title
+            width: 300px !important
+            margin-bottom: 10px
+            height: 1px
+            transition: all 0.5s
+            &::after
+                height: 2px !important
+            @media screen and (max-width: 1025px)
+                width: 150px !important
+        &:nth-child(2)
+            // margin-bottom: 100px
+            
+
+
