@@ -1,2 +1,20 @@
-# freenokke-JSFE2021Q3
-Private repository for @freenokke
+# Deploy: 
+* **https://momentum-2021q3.netlify.app/**
+
+# Информация о проекте
+Проект основного курса JavaScript/Front-end 2021Q3
+
+## Онлайн-магазин товаров
+### Функционал:
+* сайт-заставка
+### Цели проекта: 
+* Работа с HTML/HTML5
+* Работа с CSS/CSS3
+* Работа с адаптивностью
+* Работа с DOM
+* Работа с JS
+* Запросы к API
+
+# Что использовалось
+* JS, ES6
+* CSS
