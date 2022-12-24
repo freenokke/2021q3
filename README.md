@@ -17,4 +17,4 @@
 # Что использовалось
 * JS, ES6
 * SASS
-* Slick SLider
+* Swiper
