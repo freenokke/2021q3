@@ -1,4 +1,5 @@
-# Deploy: **https://freenokke.github.io/2021q3/museum-dom/**
+# Deploy: 
+* **https://freenokke.github.io/2021q3/museum-dom/**
 
 # Информация о проекте
 Проект основного курса JavaScript/Front-end 2021Q3
